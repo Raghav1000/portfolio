@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+body {
+  @apply bg-background text-foreground;
+}
