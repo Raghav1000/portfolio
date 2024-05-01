@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "./components/Navbar/Navbar";
 import AppContainer from "./components/AppContainer/AppContainer";
+import Footer from "./components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <AppContainer>
             <Navbar />
             <div className="px-6 lg:px-20 xl:px-40">{children}</div>
+            <Footer />
           </AppContainer>
         </ThemeProvider>
       </body>

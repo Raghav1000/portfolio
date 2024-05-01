@@ -19,7 +19,7 @@ const Button = ({ label, icon, size, onClick, type, className }: Partial<IButton
   return (
     <div>
       <button onClick={onClick} className={`${classStyle} ${className}`}>
-        <div className="flex items-center gap-1.5 opacity-80 group-hover:opacity-100">
+        <div className="flex items-center justify-center gap-1.5 opacity-80 group-hover:opacity-100">
           {icon && icon}
           {label && label}
         </div>
