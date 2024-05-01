@@ -6,22 +6,23 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   purge: {
     enabled: true,
-    content: ['./src/**/*.tsx'],
+    content: ["./src/**/*.tsx"],
   },
   theme: {
     extend: {
       colors: {
-        primary: '#DCB84F',
+        primary: "#DCB84F",
         appGrey: {
-          400: 'hsl(var(--bg-hover) / <alpha-value>)',
+          400: "hsl(var(--bg-hover) / <alpha-value>)",
         },
-        background: 'hsl(var(--background) / <alpha-value>)',
-        foreground: 'hsl(var(--foreground) / <alpha-value>)',
-        overlay: 'hsl(var(--overlay) / <alpha-value>)',
-      }
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        overlay: "hsl(var(--overlay) / <alpha-value>)",
+        "surface-100": "hsl(var(--colors-gray-dark-100) / <alpha-value>)",
+      },
     },
   },
   plugins: [],

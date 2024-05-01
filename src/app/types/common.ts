@@ -7,7 +7,7 @@ export interface INavMenuItems {
 
 export type Size = "sm" | "md" | "lg";
 
-export type IButtonType = 'text' | 'primary'
+export type IButtonType = 'text' | 'primary' | 'default'
 
 export interface IButton {
     label: string;
@@ -15,4 +15,5 @@ export interface IButton {
     size: Size;
     onClick: () => void;
     type: IButtonType
+    className:string
 }

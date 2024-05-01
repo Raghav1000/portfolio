@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import "./themes/light.css";
 @import "./themes/dark.css";
+@import url(./animation.css);
 
 body {
   @apply bg-background text-foreground;

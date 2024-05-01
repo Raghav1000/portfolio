@@ -1,0 +1,49 @@
+/* rotationg border  */
+.rotating-border {
+  display: grid;
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  --border-angle: 0turn; /* Initial value of --border-angle custom property */
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #1c1c1c,
+    #1c1c1c,
+    #1c1c1c 60%,
+    #1c1c1c 95%
+  );
+
+  border: solid 5px transparent;
+  border-radius: 2em;
+
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    var(--primary),
+    var(--primary) 99%,
+    transparent
+  );
+
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+.box:hover {
+  animation-play-state: paused;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
