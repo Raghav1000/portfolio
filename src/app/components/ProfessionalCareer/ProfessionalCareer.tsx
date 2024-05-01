@@ -11,7 +11,7 @@ const ProfessionalCareer = () => {
         Professional Career
       </h4>
         {workExperience?.map((item) => (
-          <div className="flex flex-col gap-4 p-6">
+          <div key={item?.title} className="flex flex-col gap-4 p-6">
             <div className="flex gap-4">
               <Image
                 src={item?.image}
