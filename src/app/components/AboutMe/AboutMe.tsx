@@ -11,7 +11,7 @@ const AboutMe = () => {
       <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
         Discover About Me
       </h4>
-      <div className="grid md:grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div>
           <h1 className="text-lg font-medium mb-3">
             Hello, This is <span className="text-primary">Raghav Mattad</span>
@@ -39,13 +39,13 @@ const AboutMe = () => {
         </div>
         <div className="flex flex-col justify-around">
           <Image
-            className="ml-auto rounded-md"
+            className="mx-auto lg:ml-auto rounded-md"
             src="/images/profile.jpeg"
             alt="profile-pic"
             height={600}
             width={400}
           />
-          <div className="flex ml-auto gap-3">
+          <div className="flex mx-auto lg:ml-auto mt-5 lg:mt-0 gap-3">
             <Button
               icon={<CiViewTimeline />}
               type="default"

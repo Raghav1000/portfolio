@@ -24,7 +24,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <AppContainer>
             <Navbar />
-            <div className="px-6 lg:px-20 xl:px-40">{children}</div>
+            <div className="px-5 lg:px-20 xl:px-40">{children}</div>
             <Footer />
           </AppContainer>
         </ThemeProvider>

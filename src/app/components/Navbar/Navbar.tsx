@@ -7,7 +7,7 @@ import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <div className="px-6 lg:px-20 xl:px-40 flex items-center justify-between border-b border-primary/20 py-3">
+    <div className="px-5 lg:px-20 xl:px-40 bg-background fixed w-full z-50 flex items-center justify-between border-b border-primary/20 py-3">
       <div className="flex items-center">
         <h3 className="text-primary text-lg font-medium">
           R M <span className="text-center text-xs">Portfolio</span>

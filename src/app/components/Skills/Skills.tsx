@@ -8,19 +8,22 @@ const Skills = () => {
   const [currentSkill, setCurrentSkill] = useState("frontend");
   return (
     <div className="my-8 md:my-16">
-      <h4 className="text-left text-3xl mb-5 border-b dark:border-green-200 border-green-700 w-max">
+      <h4 className="text-left hidden md:block text-3xl mb-5 border-b dark:border-green-200 border-green-700 w-max">
         Technologies that I have worked on
       </h4>
+      <h4 className="text-left block md:hidden text-3xl mb-5 border-b dark:border-green-200 border-green-700 w-max">
+        Skills
+      </h4>
       <div className="rounded-sm flex flex-col gap-6">
-        <div className="flex gap-1">
+        <div className="flex gap-1 overflow-scroll">
           {skillsTitle?.map((item) => (
             <Button
               key={item?.value}
               label={item?.label}
               className={
                 currentSkill === item?.value
-                  ? "border border-primary/50"
-                  : "border border-transparent"
+                  ? "border border-primary/50 w-max"
+                  : "border border-transparent w-max"
               }
               onClick={() => setCurrentSkill(item?.value)}
             />

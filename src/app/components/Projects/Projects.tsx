@@ -1,4 +1,4 @@
-import { GrProjects } from "react-icons/gr"; 
+import { GrProjects } from "react-icons/gr";
 import Image from "next/image";
 import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
@@ -11,7 +11,7 @@ const Projects = () => {
         Projects
       </h4>
       <div className="flex flex-col gap-20">
-        <div className="grid grid-cols-2 relative items-center gap-5">
+        <div className="grid md:grid-cols-2 relative md:items-center gap-5">
           <div>
             <Image
               src={"/images/project-1.avif"}
@@ -21,14 +21,14 @@ const Projects = () => {
               className="z-1 hover:opacity-100 rounded-md"
             />
           </div>
-          <div className="my-auto ml-auto z-10 flex flex-col items-end gap-4">
+          <div className="my-auto ml-auto z-10 flex flex-col items-start md:items-end gap-4">
             <h4 className="text-primary text-sm font-light tracking-wide text-right">
               Featured Project
             </h4>
             <h2 className="text-xl font-semibold text-foreground tracking-wide text-right">
               Real Estate Trade
             </h2>
-            <h6 className="border-b  border-t border-primary/20 py-5 pl-5 text-sm text-right rounded-sm shadow-lg leading-5">
+            <h6 className="border-b  border-t border-primary/20 py-5 md:pl-5 text-sm md:text-right rounded-sm shadow-lg leading-5">
               A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
               and more. Available on Visual Studio Marketplace, Package Control,
               Atom Package Manager, Visual Studio Marketplace.
@@ -60,7 +60,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 relative items-center gap-5">
+        <div className="grid md:grid-cols-2 relative items-center gap-5">
           <div className="">
             <Image
               src={"/images/project-1.avif"}
@@ -70,7 +70,7 @@ const Projects = () => {
               className="z-1 hover:opacity-100 rounded-md"
             />
           </div>
-          <div className="my-auto ml-auto z-10 flex flex-col items-start gap-4 -order-1">
+          <div className="my-auto ml-auto z-10 flex flex-col items-start gap-4 md:-order-1">
             <h4 className="text-primary text-sm font-light tracking-wide text-right">
               Featured Project
             </h4>
@@ -110,8 +110,13 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <Button label='View More Projects' className="my-10 text-center mx-auto" type='primary' size='lg' icon={<GrProjects size={16} />
-    } />
+      <Button
+        label="View More Projects"
+        className="my-5 md:my-10 flex mx-auto"
+        type="primary"
+        size="lg"
+        icon={<GrProjects size={16} />}
+      />
     </div>
   );
 };

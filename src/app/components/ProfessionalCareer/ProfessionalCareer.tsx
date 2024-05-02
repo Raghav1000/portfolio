@@ -6,12 +6,12 @@ import { TbRoute } from "react-icons/tb";
 const ProfessionalCareer = () => {
   return (
     <div className="my-8 md:my-16">
-      <div className="grid rounded-md dark:bg-[#222322] bg-[#eaeaea] border dark:border-white/10 border-black/15 shadow-md p-6">
+      <div className="grid rounded-md dark:bg-[#222322] bg-[#eaeaea] border dark:border-white/10 border-black/15 shadow-md py-4 px-2 md:p-6">
       <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
         Professional Career
       </h4>
         {workExperience?.map((item) => (
-          <div key={item?.title} className="flex flex-col gap-4 p-6">
+          <div key={item?.title} className="flex flex-col gap-4 mt-8 sm:mt-0 md:p-6">
             <div className="flex gap-4">
               <Image
                 src={item?.image}
@@ -20,7 +20,7 @@ const ProfessionalCareer = () => {
                 className="rounded-full h-10 w-10 shadow-md border"
                 height={35}
               />
-              <div>
+              <div className="flex flex-col">
                 <h4 className="text-lg text-foreground">{item?.title}</h4>
                 <div className="flex justify-between text-sm text-foreground/50">
                   <span>
@@ -34,7 +34,7 @@ const ProfessionalCareer = () => {
                   {item?.description}
                 </div>
                 <div className="flex items-center justify-between mt-5"> 
-                    <div className="px-2 py-0.5 border border-green-600/30 rounded-sm text-foreground">
+                    <div className="hidden md:block px-2 py-0.5 border border-green-600/30 rounded-sm text-foreground">
                       <span>{item?.role} </span> - 1 year
                     </div>
                   <Button

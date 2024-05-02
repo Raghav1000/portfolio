@@ -11,8 +11,8 @@ const Contact = () => {
         <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
           Get in touch
         </h4>
-        <div className="grid grid-cols-2">
-          <div className="flex flex-col justify-between">
+        <div className="grid md:grid-cols-2 sm:gap-0 md:gap-0">
+          <div className="flex flex-col gap-5 justify-between">
             <div className="flex flex-col gap-4">
               <div>
                 Feel free to get in touch with me. I am always open to
@@ -53,7 +53,7 @@ const Contact = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-6 ml-20">
+          <div className="flex flex-col gap-6 mt-5 md:mt-0 md:ml-20">
             <input
               placeholder="Name"
               className={
