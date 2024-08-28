@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../UI/Button/Button";
 import { GrProjects } from "react-icons/gr";
 import DraggableButton from "./DraggableButton";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -25,13 +26,17 @@ const Hero = () => {
         </p>
       </div>
       <div className="flex items-center justify-center text-sm gap-5 my-5">
-        <Button
-          icon={<GrProjects />}
-          label="View Projects"
-          type="primary"
-          size="lg"
-        />
+        <Link href={"#projects"}>
+          <Button
+            icon={<GrProjects />}
+            label="View Projects"
+            type="primary"
+            size="lg"
+          />
+        </Link>
+        <Link href={"#contact"}>
         <Button label="Contact me" type="default" size="lg" />
+        </Link>
       </div>
     </div>
   );

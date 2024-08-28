@@ -5,6 +5,7 @@ import Button from "../UI/Button/Button";
 import { GrGithub } from "react-icons/gr";
 import { useRouter } from "next/navigation";
 import { BsLinkedin } from "react-icons/bs";
+import Link from "next/link";
 
 const CallToActionNavItems = () => {
   const { theme, setTheme } = useTheme();
@@ -24,12 +25,14 @@ const CallToActionNavItems = () => {
         size={"sm"}
         onClick={() => push("www.linkedin.com")}
       />
+      <Link href="#contact">
       <Button
         label={"Contact me"}
         size={"sm"}
         type="primary"
         onClick={() => push("/contact")}
       />
+      </Link>
       <Button
         icon={
           theme === "dark" ? (

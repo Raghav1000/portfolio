@@ -6,7 +6,7 @@ import { GoLinkExternal } from "react-icons/go";
 
 const Projects = () => {
   return (
-    <div className="my-8 md:my-16">
+    <div id="projects" className="my-8 md:my-16">
       <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
         Projects
       </h4>

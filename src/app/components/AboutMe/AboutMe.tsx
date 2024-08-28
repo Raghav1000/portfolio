@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Button from "../UI/Button/Button";
 import { BiDownload } from "react-icons/bi";
-import { CgViewDay } from "react-icons/cg";
-import { BsEye } from "react-icons/bs";
 import { CiViewTimeline } from "react-icons/ci";
 
 const AboutMe = () => {
   return (
     <div className="my-8 md:my-16">
-      <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
+      <h4 id="about" className="text-left text-3xl mb-5 border-b border-green-200 w-max">
         Discover About Me
       </h4>
       <div className="grid lg:grid-cols-2">

@@ -5,6 +5,10 @@
 @import "./themes/dark.css";
 @import url(./animation.css);
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-background text-foreground;
 }

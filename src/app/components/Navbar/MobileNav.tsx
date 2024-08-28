@@ -75,12 +75,14 @@ const MobileNav = () => {
                     ))}
                   </div>
                   <div className="flex gap-2 my-10 justify-center">
-                    <Button
-                      label={"Contact me"}
-                      size={"sm"}
-                      type="primary"
-                      onClick={() => push("/contact")}
-                    />
+                    <Link href="#contact">
+                      <Button
+                        label={"Contact me"}
+                        size={"sm"}
+                        type="primary"
+                        onClick={() => push("/contact")}
+                      />
+                    </Link>
                     <Button
                       icon={<GrGithub size={18} />}
                       size={"sm"}

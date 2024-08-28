@@ -6,7 +6,7 @@ import { BiMailSend } from "react-icons/bi";
 
 const Contact = () => {
   return (
-    <div className="my-8 md:my-16">
+    <div id="contact" className="my-8 md:my-16">
       <div className="grid rounded-md  border dark:border-white/10 border-black/15 shadow-md p-6">
         <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
           Get in touch
