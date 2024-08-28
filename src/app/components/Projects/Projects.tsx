@@ -1,10 +1,13 @@
+"use client";
 import { GrProjects } from "react-icons/gr";
 import Image from "next/image";
 import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
 import { GoLinkExternal } from "react-icons/go";
+import { useRouter } from "next/navigation";
 
 const Projects = () => {
+  const router = useRouter();
   return (
     <div id="projects" className="my-8 md:my-16">
       <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
@@ -116,6 +119,7 @@ const Projects = () => {
         type="primary"
         size="lg"
         icon={<GrProjects size={16} />}
+        onClick={() => router.push("/projects")}
       />
     </div>
   );

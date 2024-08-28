@@ -55,7 +55,9 @@ const MobileNav = () => {
               >
                 <div className="absolute px-5 lg:px-20 xl:px-40 py-3 flex items-center justify-between w-screen left-0 top-0 z-50 bg-overlay before:content[''] before:absolute before:w-full before:h-3 before:inset-0 before:top-full before:bg-gradient-to-b before:from-background-overlay before:to-transparent  border-b border-primary/20">
                   <h3 className="text-primary text-lg font-medium">
-                    R M <span className="text-center text-xs">Portfolio</span>
+                    <Link href={"/"}>
+                      R M <span className="text-center text-xs">Portfolio</span>
+                    </Link>
                   </h3>
                   <Button
                     icon={<AiOutlineClose size={16} />}

@@ -4,17 +4,24 @@ import { BiMailSend } from "react-icons/bi";
 import { BsLinkedin } from "react-icons/bs";
 import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <div className="px-5 lg:px-20 xl:px-40 border-t border-t-primary/50 h-20 flex items-center justify-between">
       <h3 className="text-primary text-lg font-medium hidden sm:block">
-        Raghav Mattad <span className="text-center text-xs">Portfolio</span>
+        <Link href="/">
+          Raghav Mattad <span className="text-center text-xs">Portfolio</span>
+        </Link>
       </h3>
       <h3 className="text-primary text-lg font-medium block sm:hidden">
-        R M <span className="text-center text-xs">Portfolio</span>
+        <Link href="/">
+          R M <span className="text-center text-xs">Portfolio</span>
+        </Link>
       </h3>
-      <div className="text-sm tracking-widest hidden md:block">&lt; CODE YOUR FUTURE &gt;</div>
+      <div className="text-sm tracking-widest hidden md:block">
+        &lt; CODE YOUR FUTURE &gt;
+      </div>
       <div className="flex gap-1">
         <Button
           icon={<GrGithub size={20} />}
