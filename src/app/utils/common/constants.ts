@@ -31,7 +31,7 @@ export const careerData = {
         techStack: ["React JS", "Node JS", "SQL"],
         product: "World Sports Action - Sports Tournaments",
         description:
-          "Australian sports tournament management organisation application - The project was based on organising tournaments of three major games (netball, football, basketball )across Australia. The application consisted of registration forms for tournaments , in game statistics, league rankings. Payment integration for registering in events. Different registration process for teams, coaches, players. They were also shifting their business model to USA, So we integrated form addresses ,api filters to segregate the application for two different regions Australia and USA. The application was already completely build, Our task was to solve bugs and to integrate minor functionalities that they were introducing on the fly",
+          "Australian sports tournament management organisation application - The project was based on organising tournaments of three major games (netball, football, basketball )across Australia. The application consisted of registration forms for tournaments , in game statistics, league rankings. Payment integration for registering in events. Different registration process for teams, coaches, players.They were also shifting their business model to USA, So we integrated form addresses ,api filters to segregate the application for two different regions Australia and USA. The application was already completely build, Our task was to solve bugs and to integrate minor functionalities that they were introducing on the fly",
       },
       {
         role: "Frontend Developer",

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="px-5 lg:px-20 xl:px-40 border-t border-t-primary/50 h-20 flex items-center justify-between">
+    <div className="px-5 lg:px-20 xl:px-40 border-t border-t-primary/50 h-20 w-screen flex items-center justify-between">
       <h3 className="text-primary text-lg font-medium hidden sm:block">
         <Link href="/">
           Raghav Mattad <span className="text-center text-xs">Portfolio</span>

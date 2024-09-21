@@ -26,24 +26,13 @@ const CallToActionNavItems = () => {
         onClick={() => push("www.linkedin.com")}
       />
       <Link href="#contact">
-      <Button
-        label={"Contact me"}
-        size={"sm"}
-        type="primary"
-        onClick={() => push("/contact")}
-      />
+        <Button
+          label={"Contact me"}
+          size={"sm"}
+          type="primary"
+          onClick={() => push("/contact")}
+        />
       </Link>
-      <Button
-        icon={
-          theme === "dark" ? (
-            <MdDarkMode size={16} />
-          ) : (
-            <MdLightMode size={16} />
-          )
-        }
-        size={"sm"}
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      />
     </div>
   );
 };

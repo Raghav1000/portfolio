@@ -29,17 +29,6 @@ const MobileNav = () => {
   return (
     <div className="lg:hidden">
       <div className="flex items-center gap-2">
-        <Button
-          icon={
-            theme === "dark" ? (
-              <MdDarkMode size={16} />
-            ) : (
-              <MdLightMode size={16} />
-            )
-          }
-          size={"sm"}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        />
         <Button icon={<IoMenu />} onClick={() => setIsOpen(!isOpen)} />
       </div>
       {
@@ -68,6 +57,7 @@ const MobileNav = () => {
                   <div className="flex flex-col font-normal text-sm">
                     {navMenuItems?.map((item) => (
                       <Link
+                      onClick={()=> setIsOpen(false)}
                         key={item?.url}
                         href={item?.url}
                         className="transition-all duration-300 hover:text-primary py-2 px-1 border-b border-foreground/10 hover:bg-appGrey-400"

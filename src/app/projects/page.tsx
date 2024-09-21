@@ -8,8 +8,9 @@ import Button from "../components/UI/Button/Button";
 const ProjectsList = () => {
   const router = useRouter();
   return (
-    <div className="py-8 md:py-16 lg:pt-32">
+    <div className="py-8 pt-20 md:py-16 lg:pt-32">
       <h2 className="text-4xl mb-10">Personal Projects</h2>
+      <div className="grid grid-cols-1 md:flex md:flex-col">
       {[
         { title: "Title", key: "project1" },
         { title: "Title", key: "project1" },
@@ -21,7 +22,7 @@ const ProjectsList = () => {
         <div
           key={item?.key}
           onClick={() => router.push("/blogs/id")}
-          className="flex gap-3 pb-4 border-b border-primary/35 group cursor-pointer my-7"
+          className="flex flex-col md:flex-row gap-3 pb-4 border-b border-primary/35 group cursor-pointer my-7"
         >
           <div>
             <Image
@@ -41,7 +42,7 @@ const ProjectsList = () => {
               voluptate temporibus soluta officia?
             </div>
           </div>
-          <div className="flex gap-2 ml-auto mt-auto">
+          <div className="flex gap-2 md:ml-auto mt-auto">
             <Button
               icon={<GrGithub size={18} />}
               size={"sm"}
@@ -59,6 +60,7 @@ const ProjectsList = () => {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 };
