@@ -4,6 +4,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
 import { BiMailSend } from "react-icons/bi";
+import ContactForm from "../AboutMe/ContactForm";
 
 const Contact = () => {
   return (
@@ -59,39 +60,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-col gap-6 mt-5 md:mt-0 md:ml-20">
-            <input
-              placeholder="Name"
-              className={
-                "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-              }
-            />
-            <input
-              placeholder="Email"
-              className={
-                "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-              }
-            />
-            <input
-              placeholder="Phone"
-              className={
-                "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-              }
-            />
-            <textarea
-              rows={4}
-              placeholder="Message"
-              className={
-                "flex w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-              }
-            ></textarea>
-            <Button
-              label="Submit"
-              type="primary"
-              className="w-full"
-              size="sm"
-            />
-          </div>
+          <ContactForm />
         </div>
       </div>
     </div>
