@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
 import Button from "../UI/Button/Button";
-import { frontEndSkills, skillsTitle } from "@/app/data/skills";
+import { frontEndSkills, skillsTitle, TSkillsTitle } from "@/app/data/skills";
 import Image from "next/image";
 
 const Skills = () => {
-  const [currentSkill, setCurrentSkill] = useState("frontend");
+  const [currentSkill, setCurrentSkill] = useState<string>("frontEndSkills");
+
   return (
     <div className="my-8 md:my-16">
       <h4 className="text-left hidden md:block text-3xl mb-5 border-b dark:border-green-200 border-green-700 w-max">
@@ -31,19 +32,22 @@ const Skills = () => {
         </div>
 
         <div className="flex gap-5 flex-wrap">
-          {frontEndSkills.map((framework, i) => (
-            <div
-              className="p-2 bg-gray-200/5 shadow-lg rounded-md max-w-max"
-              key={framework?.tooltip}
-            >
-              <Image
-                src={framework?.icon}
-                alt={framework?.tooltip}
-                height={30}
-                width={30}
-              />
-            </div>
-          ))}
+          {skillsTitle
+            ?.find((item) => item?.value === currentSkill)
+            ?.data?.map((framework, i) => (
+              <div
+                className="tooltip p-2 bg-gray-200/5 shadow-lg rounded-md max-w-max"
+                key={framework?.tooltip}
+              >
+                <Image
+                  src={framework?.icon}
+                  alt={framework?.tooltip}
+                  height={30}
+                  width={30}
+                />
+                <span className="tooltip-text">{framework?.tooltip}</span>
+              </div>
+            ))}
         </div>
       </div>
     </div>

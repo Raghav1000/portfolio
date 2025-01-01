@@ -57,7 +57,7 @@ const MobileNav = () => {
                   <div className="flex flex-col font-normal text-sm">
                     {navMenuItems?.map((item) => (
                       <Link
-                      onClick={()=> setIsOpen(false)}
+                        onClick={() => setIsOpen(false)}
                         key={item?.url}
                         href={item?.url}
                         className="transition-all duration-300 hover:text-primary py-2 px-1 border-b border-foreground/10 hover:bg-appGrey-400"
@@ -67,7 +67,7 @@ const MobileNav = () => {
                     ))}
                   </div>
                   <div className="flex gap-2 my-10 justify-center">
-                    <Link href="#contact">
+                    <Link href="/#contact">
                       <Button
                         label={"Contact me"}
                         size={"sm"}
@@ -78,7 +78,12 @@ const MobileNav = () => {
                     <Button
                       icon={<GrGithub size={18} />}
                       size={"sm"}
-                      onClick={() => push("www.github.com")}
+                      onClick={() =>
+                        window.open(
+                          "https://www.github.com/Raghav1000",
+                          "_blank"
+                        )
+                      }
                     />
                     <Button
                       icon={<BsLinkedin size={16} />}

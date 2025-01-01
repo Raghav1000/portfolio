@@ -51,7 +51,7 @@ const ProfessionalCareerInfo = () => {
           style={{ maxWidth: "100%" }}
         >
           <h4 className="text-sm">{item?.role}</h4>
-          <h4 className="text-lg">{item?.product}</h4>
+          <h4 className="text-lg text-primary">{item?.product}</h4>
           <div className="flex gap-2 mt-3 flex-wrap">
             {item?.techStack?.map((tech) => (
               <div

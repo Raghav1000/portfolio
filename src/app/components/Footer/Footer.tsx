@@ -1,3 +1,4 @@
+"use client";
 import { MdPermContactCalendar } from "react-icons/md";
 import { AiFillFilePdf } from "react-icons/ai";
 import { BiMailSend } from "react-icons/bi";
@@ -27,7 +28,9 @@ const Footer = () => {
           icon={<GrGithub size={20} />}
           size={"sm"}
           type="text"
-          // onClick={() => push("www.github.com")}
+          onClick={() =>
+            window.open("https://www.github.com/Raghav1000", "_blank")
+          }
         />
         <Button
           icon={<BsLinkedin size={20} />}
@@ -39,19 +42,16 @@ const Footer = () => {
           icon={<BiMailSend size={22} />}
           size={"sm"}
           type="text"
-          // onClick={() => push("www.github.com")}
+          onClick={() => (window.location.href = "mailto:raghlm10@gmail.com")}
         />
-        <Button
-          icon={<AiFillFilePdf size={20} />}
-          size={"sm"}
-          type="text"
-          // onClick={() => push("www.linkedin.com")}
-        />
+        <a href="/resume.pdf" target="_blank">
+          <Button icon={<AiFillFilePdf size={20} />} size={"lg"} type="text" />
+        </a>
         <Button
           icon={<MdPermContactCalendar size={20} />}
           size={"sm"}
           type="text"
-          // onClick={() => push("www.linkedin.com")}
+          onClick={() => (window.location.href = "tel:+1234567890")}
         />
       </div>
     </div>

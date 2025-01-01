@@ -52,7 +52,9 @@ const Projects = () => {
                 icon={<GrGithub size={18} />}
                 size={"sm"}
                 type="default"
-                //   onClick={() => push("www.github.com")}
+                onClick={() =>
+                  window.open("https://www.github.com/Raghav1000", "_blank")
+                }
               />
               <Button
                 icon={<GoLinkExternal size={18} />}
@@ -101,7 +103,9 @@ const Projects = () => {
                 icon={<GrGithub size={18} />}
                 size={"sm"}
                 type="default"
-                //   onClick={() => push("www.github.com")}
+                onClick={() =>
+                  window.open("https://www.github.com/Raghav1000", "_blank")
+                }
               />
               <Button
                 icon={<GoLinkExternal size={18} />}

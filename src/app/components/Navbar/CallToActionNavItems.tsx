@@ -17,7 +17,9 @@ const CallToActionNavItems = () => {
         label={"Github"}
         icon={<GrGithub size={16} />}
         size={"sm"}
-        onClick={() => push("www.github.com")}
+        onClick={() =>
+          window.open("https://www.github.com/Raghav1000", "_blank")
+        }
       />
       <Button
         label={"Linkedin"}
@@ -25,7 +27,7 @@ const CallToActionNavItems = () => {
         size={"sm"}
         onClick={() => push("www.linkedin.com")}
       />
-      <Link href="#contact">
+      <Link href="/#contact">
         <Button
           label={"Contact me"}
           size={"sm"}

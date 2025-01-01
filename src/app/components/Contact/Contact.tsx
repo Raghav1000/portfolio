@@ -1,6 +1,7 @@
+"use client";
 import { AiFillFilePdf } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
-import { GrGithub, GrResume } from "react-icons/gr";
+import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
 import { BiMailSend } from "react-icons/bi";
 
@@ -31,7 +32,9 @@ const Contact = () => {
                 icon={<GrGithub size={20} />}
                 size={"lg"}
                 type="default"
-                // onClick={() => push("www.github.com")}
+                onClick={() =>
+                  window.open("https://www.github.com/Raghav1000", "_blank")
+                }
               />
               <Button
                 icon={<BsLinkedin size={20} />}
@@ -43,14 +46,17 @@ const Contact = () => {
                 icon={<BiMailSend size={20} />}
                 size={"lg"}
                 type="default"
-                // onClick={() => push("www.github.com")}
+                onClick={() =>
+                  (window.location.href = "mailto:raghlm10@gmail.com")
+                }
               />
-              <Button
-                icon={<AiFillFilePdf size={20} />}
-                size={"lg"}
-                type="default"
-                // onClick={() => push("www.linkedin.com")}
-              />
+              <a href="/resume.pdf" target="_blank">
+                <Button
+                  icon={<AiFillFilePdf size={20} />}
+                  size={"lg"}
+                  type="default"
+                />
+              </a>
             </div>
           </div>
           <div className="flex flex-col gap-6 mt-5 md:mt-0 md:ml-20">
@@ -79,7 +85,12 @@ const Contact = () => {
                 "flex w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
               }
             ></textarea>
-            <Button label="Submit" type="primary" className="w-full"  size="sm"/>
+            <Button
+              label="Submit"
+              type="primary"
+              className="w-full"
+              size="sm"
+            />
           </div>
         </div>
       </div>
