@@ -1,7 +1,6 @@
 "use client";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Button from "../UI/Button/Button";
-import emailjs from "emailjs-com";
 
 type TFormData = {
   name: string;
@@ -29,44 +28,35 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = () => {
-    const { email, message } = formData;
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setStatus("Sending...");
 
-    if (email && message) {
-      const form = document.createElement("form");
+    const web3FormData = new FormData();
+    web3FormData.append("access_key", "567e6196-94b5-443c-89ca-a7421d509d87");
 
-      // Create hidden input fields for each form data field
-      for (const key in formData) {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = formData[key as keyof TFormData];
-        form.appendChild(input);
+    Object.keys(formData).forEach((key) => {
+      web3FormData.append(key, formData[key as keyof TFormData]);
+    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3FormData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        console.error("Error:", data);
+        setStatus(data.message);
       }
-
-      // Append the form to the document body
-      document.body.appendChild(form);
-
-      emailjs
-        .sendForm(
-          "service_0r6a16i",
-          "template_290jv3k",
-          form,
-          "sezvG6QUrCr2wroPb"
-        )
-        .then(
-          (response) => {
-            console.log("Success:", response);
-            setStatus("Your message has been sent successfully!");
-            setFormData({ name: "", email: "", message: "", phone: "" });
-          },
-          (error) => {
-            console.error("Error:", error);
-            setStatus("There was an error sending your message.");
-          }
-        );
-    } else {
-      setStatus("Please fill out all fields.");
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("There was an error sending your message.");
     }
 
     setTimeout(() => {
@@ -76,51 +66,49 @@ const ContactForm = () => {
 
   return (
     <div className="flex flex-col gap-6 mt-5 md:mt-0 md:ml-20">
-      <input
-        placeholder="Name"
-        name="name"
-        className={
-          "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-        }
-        value={formData?.name}
-        onChange={handleChange}
-      />
-      <input
-        placeholder="Email"
-        name="email"
-        className={
-          "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-        }
-        value={formData?.email}
-        onChange={handleChange}
-      />
-      <input
-        placeholder="Phone"
-        name="phone"
-        className={
-          "flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-        }
-        value={formData?.phone}
-        onChange={handleChange}
-      />
-      <textarea
-        rows={4}
-        name="message"
-        placeholder="Message"
-        className={
-          "flex w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted"
-        }
-        value={formData.message}
-        onChange={handleChange}
-      ></textarea>
-      <Button
-        label="Submit"
-        type="primary"
-        onClick={handleSubmit}
-        className="w-full"
-        size="sm"
-      />
-      {status && <p>{status}</p>}
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <input
+          placeholder="Name"
+          name="name"
+          required
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="Email"
+          name="email"
+          required
+          type="email"
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="Phone"
+          name="phone"
+          // required
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+        <textarea
+          rows={4}
+          name="message"
+          required
+          placeholder="Message"
+          className="flex w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
+        <Button
+          label="Submit"
+          type="primary"
+          className="w-full"
+          size="sm"
+        />
+      </form>
+      {status && <p className="text-center">{status}</p>}
     </div>
   );
 };

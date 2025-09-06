@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../UI/Button/Button";
 import { frontEndSkills, skillsTitle, TSkillsTitle } from "@/app/data/skills";
 import Image from "next/image";
 
 const Skills = () => {
   const [currentSkill, setCurrentSkill] = useState<string>("frontEndSkills");
-
+ 
   return (
     <div className="my-8 md:my-16">
       <h4 className="text-left hidden md:block text-3xl mb-5 border-b dark:border-green-200 border-green-700 w-max">
@@ -36,7 +36,7 @@ const Skills = () => {
             ?.find((item) => item?.value === currentSkill)
             ?.data?.map((framework, i) => (
               <div
-                className="tooltip p-2 bg-gray-200/5 shadow-lg rounded-md max-w-max"
+                className="tooltip p-2 bg-gray-200/5 shadow-lg rounded-md !flex"
                 key={framework?.tooltip}
               >
                 <Image

@@ -36,7 +36,12 @@ const Footer = () => {
           icon={<BsLinkedin size={20} />}
           size={"sm"}
           type="text"
-          // onClick={() => push("www.linkedin.com")}
+          onClick={() =>
+            window.open(
+              "https://www.linkedin.com/in/raghav-m-647180328",
+              "_blank"
+            )
+          }
         />
         <Button
           icon={<BiMailSend size={22} />}

@@ -17,15 +17,10 @@ const Contact = () => {
           <div className="flex flex-col gap-5 justify-between">
             <div className="flex flex-col gap-4">
               <div>
-                Feel free to get in touch with me. I am always open to
-                discussing new projects, creative ideas or opportunities to be
-                part of your visions.
+             I’m always open to connecting and discussing new projects, creative ideas, or potential collaborations.
               </div>
               <div>
-                Feel free to get in touch with me. I am always open to
-                discussing new projects. Feel free to get in touch with me. I am
-                always open to discussing new projects. Feel free to get in
-                touch with me. I am always open to discussing new projects
+                If you have something in mind, feel free to reach out. I’d love to be part of your vision.
               </div>
             </div>
             <div className="flex gap-4">
@@ -41,7 +36,12 @@ const Contact = () => {
                 icon={<BsLinkedin size={20} />}
                 size={"lg"}
                 type="default"
-                // onClick={() => push("www.linkedin.com")}
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/raghav-m-647180328",
+                    "_blank"
+                  )
+                }
               />
               <Button
                 icon={<BiMailSend size={20} />}

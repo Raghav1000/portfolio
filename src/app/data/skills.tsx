@@ -42,6 +42,10 @@ export const backEndSkills = [
     icon: "/icons/backend/nodejs-icon.svg",
   },
   {
+    tooltip: "Golang",
+    icon: "/icons/backend/go-icon.svg",
+  },
+  {
     tooltip: "NestJS",
     icon: "/icons/backend/nestjs-icon.svg",
   },

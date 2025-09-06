@@ -6,18 +6,18 @@ export const workExperience = [
     location: "Ahmedabad, India",
     type: "On Site",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quibusdam ipsum voluptatibus commodi eius reprehenderit enim delectus! Minus, sunt voluptatem natus non, repudiandae quae fugiat eius, suscipit consequuntur debitis nemo!",
+      "Built and maintained scalable web applications, APIs, and databases while collaborating with cross-functional teams to deliver efficient solutions.",
     image: "/images/bitontree.jpeg",
     key: "bitontree",
   },
   {
     title: "Protocolzone Pvt. Ltd",
-    workSpan: "Oct 2023 - Sep 2024",
+    workSpan: "Oct 2023 - Oct 2025",
     role: "Fullstack Developer",
     location: "Ahmedabad, India",
     type: "On Site",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quibusdam ipsum voluptatibus commodi eius reprehenderit enim delectus! Minus, sunt voluptatem natus non, repudiandae quae fugiat eius, suscipit consequuntur debitis nemo!",
+      "Led end-to-end backend development, integrating payments, dashboards, and microservices to deliver high-performing client solutions",
     image: "/images/protocolzone.jpeg",
     key: "protocolzone",
   },

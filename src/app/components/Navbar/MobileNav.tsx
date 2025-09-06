@@ -88,7 +88,12 @@ const MobileNav = () => {
                     <Button
                       icon={<BsLinkedin size={16} />}
                       size={"sm"}
-                      onClick={() => push("www.linkedin.com")}
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/raghav-m-647180328",
+                          "_blank"
+                        )
+                      }
                     />
                   </div>
                 </div>

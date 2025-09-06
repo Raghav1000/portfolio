@@ -25,7 +25,12 @@ const CallToActionNavItems = () => {
         label={"Linkedin"}
         icon={<BsLinkedin size={14} />}
         size={"sm"}
-        onClick={() => push("www.linkedin.com")}
+        onClick={() =>
+          window.open(
+            "https://www.linkedin.com/in/raghav-m-647180328",
+            "_blank"
+          )
+        }
       />
       <Link href="/#contact">
         <Button

@@ -38,16 +38,33 @@ export const careerData = {
         techStack: ["Three JS", "React Three Fiber"],
         product: "Interior Design Interface",
         description:
-          "We created a demo project called Tile Viewerin which the business modelrequired a website showcasing 3D models of various rooms in a house, such as the living room, bedroom, kitchen, and bathroom. Our task was to replace the 3D model tiles with the provided tile images The demo was well capable enough to change the tiles, add pattern using two tiles, add grouting to tiles, changing the sizes of the tile. To achieve this, we substituted the 3D model tiles and floor meshes with the tile image by creating a texture of the image and evenly repeating it across the mesh. For tasks like adding grout, scaling, and implementing patterns, we had to write OpenGL code.",
+          "We created a demo project called Tile Viewer in which the business model required a website showcasing 3D models of various rooms in a house, such as the living room, bedroom, kitchen, and bathroom. Our task was to replace the 3D model tiles with the provided tile images The demo was well capable enough to change the tiles, add pattern using two tiles, add grouting to tiles, changing the sizes of the tile. To achieve this, we substituted the 3D model tiles and floor meshes with the tile image by creating a texture of the image and evenly repeating it across the mesh. For tasks like adding grout, scaling, and implementing patterns, we had to write OpenGL code.",
       },
     ],
   },
   protocolzone: {
     companyName: "ProtocolZone Private Limited",
-    duration: "1 year 6 months",
-    timePeriod: "27th Oct 2024 - 10 April 2025",
+    duration: "2 years",
+    timePeriod: "27th Oct 2023 - 27 oct 2025",
     companyWebsite: "https://www.protocolzone.com/",
     projects: [
+         {
+        role: "Full stack Developer",
+        techStack: [
+          "Single spa",
+          "React",
+          "Golang",
+          "GCP",
+          "Docker",
+          "Kubernetes",
+          "Bigtable",
+          "Redis",
+          "Google pub sub"
+        ],
+        product: "Futures portal",
+        description:
+          "The Futures Portal is a key module in a horse racing platform that focuses on managing and displaying upcoming race events. It allows administrators to configure and publish future race schedules, including event details, participating horses, tracks, and odds. The system is integrated with a price management module, enabling dynamic pricing and real-time updates for betting markets. Administrators can customize event settings such as race categories, regions, currency options, and language preferences. The portal leverages GCP services for scalability, Bigtable for event data storage, Redis for caching live updates, and Google Pub/Sub for event-driven messaging. This ensures bettors have access to accurate and timely information about upcoming races, while operators can efficiently manage configurations, pricing, and user engagement.",
+      },
       {
         role: "Full stack Developer",
         techStack: [

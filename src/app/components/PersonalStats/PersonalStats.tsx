@@ -3,7 +3,7 @@ const PersonalStats = () => {
     <div className="border border-green-200/50 rounded-md group hover:border-primary/30">
       <div className="grid grid-cols-3 p-3 md:p-5">
         <div className="flex flex-col text-center item-center border-r group-hover:border-r-primary/20">
-          <h4 className="text-xl font-medium">2+</h4>
+          <h4 className="text-xl font-medium">3+</h4>
           <span className="font-thin text-sm md:text-base">
             Years of Experience
           </span>

@@ -18,10 +18,10 @@ const AboutMe = () => {
             Hello, This is <span className="text-primary">Raghav Mattad</span>
           </h1>
           <h6 className="leading-7 tracking-wide text-base font-light mb-5">
-            Versatile fullstack developer with 2 years of experience in building
+            Versatile fullstack developer with 3 of experience in building
             robust, scalable web applications. Proficient in diverse
-            technologies spanning frontend (React), backend (Node.js), database
-            (MongoDB, PostgreSQL), and DevOps (Docker, AWS, GCP). Demonstrated
+            technologies spanning frontend (React), backend (Node.js and Go lang), database
+            (MongoDB, PostgreSQL, Bigtable), and DevOps (Docker, AWS, GCP). Demonstrated
             expertise in crafting responsive user interfaces, designing RESTful
             APIs, and implementing CI/CD pipelines. Adept at quickly adapting to
             new technologies and methodologies to meet evolving project
@@ -37,13 +37,13 @@ const AboutMe = () => {
         </div>
         <div className="flex flex-col justify-around">
           <Image
-            className="mx-auto lg:ml-auto rounded-md"
-            src="/images/profile.jpeg"
+            className="mx-auto rounded-md"
+            src="/images/profile2.jpeg"
             alt="profile-pic"
             height={600}
-            width={400}
+            width={260}
           />
-          <div className="flex mx-auto lg:ml-auto mt-5 lg:mt-0 gap-3">
+          <div className="flex mx-auto  mt-5 lg:mt-5 gap-3">
             <a href="/resume.pdf" target="_blank">
               <Button
                 icon={<CiViewTimeline />}

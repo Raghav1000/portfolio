@@ -41,7 +41,8 @@ const ProfessionalCareer = () => {
                 </div>
                 <div className="flex items-center justify-between mt-5">
                   <div className="hidden md:block px-2 py-0.5 border border-green-600/30 rounded-sm text-foreground">
-                    <span>{item?.role} </span> - 1 year
+                    <span>{item?.role} </span> -{" "}
+                    {item?.key == "bitontree" ? 1 : 2} year
                   </div>
                   <Button
                     onClick={() => route.push(`professional/${item?.key}`)}

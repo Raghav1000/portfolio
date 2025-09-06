@@ -18,7 +18,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="pt-2 text-foreground text-sm sm:mt-2 lg:mb-0 sm:text-base lg:text-lg md:w-[75%] lg:w-[60%]">
-          A full-stack developer with over two years of experience delivering
+          A full-stack developer with over three years of experience delivering
           innovative, scalable, efficient web and cloud-based solutions,
           dedicated to transform complex challenges into seamless digital
           experiences.
