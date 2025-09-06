@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
-import { IoCloseCircleOutline, IoMenu } from "react-icons/io5";
+import {  IoMenu } from "react-icons/io5";
 import Button from "../UI/Button/Button";
-import { MdCancelScheduleSend, MdDarkMode, MdLightMode } from "react-icons/md";
-import { useTheme } from "next-themes";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import { DEFAULT_EASE } from "@/app/utils/common/animation";
 import { AiOutlineClose } from "react-icons/ai";
@@ -15,7 +13,6 @@ import { useRouter } from "next/navigation";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const { push } = useRouter();
 
   const container = {
