@@ -25,10 +25,10 @@ const Hero = () => {
         </p>
       </div>
       <div className="flex items-center justify-center text-sm gap-5 my-5">
-        <Link href={"#projects"}>
+        <Link href="/resume.pdf" target="_blank">
           <Button
             icon={<GrProjects />}
-            label="View Projects"
+            label="View Portfolio"
             type="primary"
             size="lg"
           />

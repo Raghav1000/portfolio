@@ -47,7 +47,7 @@ const Footer = () => {
           icon={<BiMailSend size={22} />}
           size={"sm"}
           type="text"
-          onClick={() => (window.location.href = "mailto:raghlm10@gmail.com")}
+          onClick={() => (window.location.href = "mailto:raghav.code.business@gmail.com")}
         />
         <a href="/resume.pdf" target="_blank">
           <Button icon={<AiFillFilePdf size={20} />} size={"lg"} type="text" />

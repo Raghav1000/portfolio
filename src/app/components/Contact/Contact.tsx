@@ -48,7 +48,7 @@ const Contact = () => {
                 size={"lg"}
                 type="default"
                 onClick={() =>
-                  (window.location.href = "mailto:raghlm10@gmail.com")
+                  (window.location.href = "mailto:raghav.code.business@gmail.com")
                 }
               />
               <a href="/resume.pdf" target="_blank">

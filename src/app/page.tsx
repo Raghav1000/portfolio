@@ -3,7 +3,6 @@ import Contact from "./components/Contact/Contact";
 import Hero from "./components/Hero/Hero";
 import PersonalStats from "./components/PersonalStats/PersonalStats";
 import ProfessionalCareer from "./components/ProfessionalCareer/ProfessionalCareer";
-import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 
 const Home = () => {
@@ -14,7 +13,7 @@ const Home = () => {
       <AboutMe />
       <Skills />
       <ProfessionalCareer />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
     </>
   );
