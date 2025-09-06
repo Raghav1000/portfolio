@@ -56,7 +56,7 @@ const Footer = () => {
           icon={<MdPermContactCalendar size={20} />}
           size={"sm"}
           type="text"
-          onClick={() => (window.location.href = "tel:+1234567890")}
+          onClick={() => (window.location.href = "tel:+919727974642")}
         />
       </div>
     </div>
