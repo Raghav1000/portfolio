@@ -148,6 +148,21 @@ export const databaseSkills = [
   },
 ];
 
+export const biSkills = [
+  {
+    tooltip: "Metabase",
+    icon: "/icons/bi/metabase.svg",
+  },
+  {
+    tooltip: "Power BI",
+    icon: "/icons/bi/powerbi.svg",
+  },
+  {
+    tooltip: "MicroStrategy",
+    icon: "/icons/bi/microstrategy.svg",
+  },
+];
+
 export const softSkills = [
   {
     tooltip: "Communication",
@@ -185,6 +200,7 @@ export const skillsTitle: TSkillsTitle = [
   { label: "Frontend", value: "frontEndSkills", data: frontEndSkills },
   { label: "Backend", value: "backendSkills", data: backEndSkills },
   { label: "Database", value: "databaseSkills", data: databaseSkills },
+  { label: "BI & Reporting", value: "biSkills", data: biSkills },
   { label: "Devops", value: "devOpsSkills", data: devOpsSkills },
   { label: "Soft Skills", value: "softSkills", data: softSkills },
 ];
