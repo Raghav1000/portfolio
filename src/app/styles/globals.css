@@ -10,7 +10,24 @@ html {
 }
 
 body {
-  @apply bg-background text-foreground;
+  @apply bg-background text-foreground antialiased;
+  overflow-x: hidden;
+}
+
+/* Offset anchored sections so the fixed navbar doesn't cover them */
+section[id],
+div[id="about"],
+div[id="contact"] {
+  scroll-margin-top: 6rem;
+}
+
+/* Hide scrollbar while keeping scroll behaviour */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .tooltip {
@@ -20,22 +37,27 @@ body {
 
 .tooltip .tooltip-text {
   visibility: hidden;
-  background-color: #333;
+  white-space: nowrap;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
+  font-size: 12px;
   text-align: center;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  pointer-events: none;
 
   position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Position above */
+  z-index: 20;
+  bottom: 130%; /* Position above */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(4px);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

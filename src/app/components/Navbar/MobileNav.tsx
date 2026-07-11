@@ -9,11 +9,10 @@ import { navMenuItems } from "@/app/data/navMenu";
 import Link from "next/link";
 import { BsLinkedin } from "react-icons/bs";
 import { GrGithub } from "react-icons/gr";
-import { useRouter } from "next/navigation";
+import { GITHUB_URL, LINKEDIN_URL } from "@/app/utils/common/constants";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { push } = useRouter();
 
   const container = {
     hidden: { opacity: 0 },
@@ -26,7 +25,12 @@ const MobileNav = () => {
   return (
     <div className="lg:hidden">
       <div className="flex items-center gap-2">
-        <Button icon={<IoMenu />} onClick={() => setIsOpen(!isOpen)} />
+        <Button
+          icon={<IoMenu size={22} />}
+          type="default"
+          ariaLabel="Open menu"
+          onClick={() => setIsOpen(true)}
+        />
       </div>
       {
         <LazyMotion features={domAnimation}>
@@ -39,15 +43,23 @@ const MobileNav = () => {
                 exit="exit"
                 className="bg-overlay fixed overflow-hidden inset-0 z-50 h-screen max-h-screen w-screen supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] transform"
               >
-                <div className="absolute px-5 lg:px-20 xl:px-40 py-3 flex items-center justify-between w-screen left-0 top-0 z-50 bg-overlay before:content[''] before:absolute before:w-full before:h-3 before:inset-0 before:top-full before:bg-gradient-to-b before:from-background-overlay before:to-transparent  border-b border-primary/20">
-                  <h3 className="text-primary text-lg font-medium">
-                    <Link href={"/"}>
-                      R M <span className="text-center text-xs">Portfolio</span>
-                    </Link>
-                  </h3>
+                <div className="absolute px-5 py-3.5 flex items-center justify-between w-full left-0 top-0 z-50 bg-overlay border-b border-white/10">
+                  <Link
+                    href={"/"}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-baseline gap-1.5"
+                  >
+                    <span className="text-primary text-lg font-semibold tracking-tight">
+                      RM
+                    </span>
+                    <span className="text-foreground-muted text-xs uppercase tracking-widest">
+                      Portfolio
+                    </span>
+                  </Link>
                   <Button
                     icon={<AiOutlineClose size={16} />}
-                    onClick={() => setIsOpen(!isOpen)}
+                    ariaLabel="Close menu"
+                    onClick={() => setIsOpen(false)}
                   />
                 </div>
                 <div className="max-h-screen supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] overflow-y-auto pt-20 pb-32 px-4">
@@ -64,33 +76,22 @@ const MobileNav = () => {
                     ))}
                   </div>
                   <div className="flex gap-2 my-10 justify-center">
-                    <Link href="/#contact">
-                      <Button
-                        label={"Contact me"}
-                        size={"sm"}
-                        type="primary"
-                        onClick={() => push("/contact")}
-                      />
+                    <Link href="/#contact" onClick={() => setIsOpen(false)}>
+                      <Button label={"Contact me"} size={"sm"} type="primary" />
                     </Link>
                     <Button
                       icon={<GrGithub size={18} />}
                       size={"sm"}
-                      onClick={() =>
-                        window.open(
-                          "https://www.github.com/Raghav1000",
-                          "_blank"
-                        )
-                      }
+                      type="default"
+                      ariaLabel="GitHub profile"
+                      onClick={() => window.open(GITHUB_URL, "_blank")}
                     />
                     <Button
                       icon={<BsLinkedin size={16} />}
                       size={"sm"}
-                      onClick={() =>
-                        window.open(
-                          "https://www.linkedin.com/in/raghav-m-647180328",
-                          "_blank"
-                        )
-                      }
+                      type="default"
+                      ariaLabel="LinkedIn profile"
+                      onClick={() => window.open(LINKEDIN_URL, "_blank")}
                     />
                   </div>
                 </div>

@@ -16,7 +16,7 @@ export const frontEndSkills = [
     icon: "/icons/frontend/sass-icon.svg",
   },
   {
-    tooltip: "Taiwlind",
+    tooltip: "Tailwind",
     icon: "/icons/frontend/tailwind-icon.svg",
   },
   {
@@ -32,7 +32,7 @@ export const frontEndSkills = [
     icon: "/icons/frontend/typescript-icon.svg",
   },
   {
-    tooltip: "Jquery",
+    tooltip: "jQuery",
     icon: "/icons/frontend/jquery-icon.svg",
   },
 ];
@@ -161,135 +161,3 @@ export const skillsTitle: TSkillsTitle = [
   { label: "Soft Skills", value: "softSkills", data: softSkills },
 ];
 
-export const frameworks = [
-  {
-    tooltip: "ReactJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/reactjs",
-  },
-  {
-    tooltip: "Next.js",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/nextjs",
-  },
-  {
-    tooltip: "RedwoodJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/redwoodjs",
-  },
-  {
-    tooltip: "Flutter",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/flutter",
-  },
-  {
-    tooltip: "Android Kotlin",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/kotlin",
-  },
-  {
-    tooltip: "SvelteKit",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/sveltekit",
-  },
-  {
-    tooltip: "Next.js",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/nextjs",
-  },
-  {
-    tooltip: "RedwoodJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/redwoodjs",
-  },
-  {
-    tooltip: "Flutter",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/flutter",
-  },
-  {
-    tooltip: "Android Kotlin",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/kotlin",
-  },
-  {
-    tooltip: "SvelteKit",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/sveltekit",
-  },
-  {
-    tooltip: "Next.js",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/nextjs",
-  },
-  {
-    tooltip: "RedwoodJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/redwoodjs",
-  },
-  {
-    tooltip: "Flutter",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/flutter",
-  },
-  {
-    tooltip: "Android Kotlin",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/kotlin",
-  },
-  {
-    tooltip: "SvelteKit",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/sveltekit",
-  },
-  {
-    tooltip: "Next.js",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/nextjs",
-  },
-  {
-    tooltip: "RedwoodJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/redwoodjs",
-  },
-  {
-    tooltip: "Flutter",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/flutter",
-  },
-  {
-    tooltip: "Android Kotlin",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/kotlin",
-  },
-  {
-    tooltip: "SvelteKit",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/sveltekit",
-  },
-  {
-    tooltip: "Next.js",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/nextjs",
-  },
-  {
-    tooltip: "RedwoodJS",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/redwoodjs",
-  },
-  {
-    tooltip: "Flutter",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/flutter",
-  },
-  {
-    tooltip: "Android Kotlin",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/kotlin",
-  },
-  {
-    tooltip: "SvelteKit",
-    icon: "/icons/react-icon.svg",
-    href: "/guides/getting-started/quickstarts/sveltekit",
-  },
-];

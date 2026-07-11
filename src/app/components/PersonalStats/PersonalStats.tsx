@@ -1,25 +1,26 @@
+const stats = [
+  { value: "3+", label: "Years of Experience" },
+  { value: "20+", label: "Web Dev Technologies" },
+  { value: "15+", label: "Projects Delivered" },
+];
+
 const PersonalStats = () => {
   return (
-    <div className="border border-green-200/50 rounded-md group hover:border-primary/30">
-      <div className="grid grid-cols-3 p-3 md:p-5">
-        <div className="flex flex-col text-center item-center border-r group-hover:border-r-primary/20">
-          <h4 className="text-xl font-medium">3+</h4>
-          <span className="font-thin text-sm md:text-base">
-            Years of Experience
-          </span>
-        </div>
-        <div className="flex flex-col text-center item-center border-r group-hover:border-r-primary/20">
-          <h4 className="text-xl font-medium">20+</h4>
-          <span className="font-thin text-sm md:text-base">
-            Web Dev Technolgies
-          </span>
-        </div>
-        <div className="flex flex-col text-center item-center">
-          <h4 className="text-xl font-medium">120%</h4>
-          <span className="font-thin text-sm md:text-base">
-            Client Satisfaction
-          </span>
-        </div>
+    <div className="rounded-xl border border-white/10 bg-white/[0.02] transition-colors hover:border-primary/30">
+      <div className="grid grid-cols-3 divide-x divide-white/10">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="flex flex-col items-center text-center gap-1 py-6 px-2 md:py-8"
+          >
+            <span className="text-2xl md:text-3xl font-semibold text-primary">
+              {stat.value}
+            </span>
+            <span className="text-xs md:text-sm text-foreground-muted">
+              {stat.label}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

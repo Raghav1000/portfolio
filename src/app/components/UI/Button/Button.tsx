@@ -1,30 +1,46 @@
 import { IButton } from "@/app/types/common";
 
-const Button = ({ label, icon, size, onClick, type, className }: Partial<IButton>) => {
+const Button = ({
+  label,
+  icon,
+  size,
+  onClick,
+  type,
+  className,
+  htmlType,
+  disabled,
+  ariaLabel,
+}: Partial<IButton>) => {
   const style = {
-    text: "flex justify-center items-center group transition-all duration-300 hover:bg-appGrey-400 rounded-md px-3 py-1.5",
+    text: "hover:bg-appGrey-400 text-foreground/80 hover:text-foreground",
     primary:
-      "justify-center items-center ease-out duration-200 rounded-md outline-none transition-all outline-0 focus-visible:outline-4 focus-visible:outline-offset-1 bg-primary/80 hover:bg-primary focus-visible:outline-brand-600 shadow-sm px-3 py-1 text-white lg:block",
+      "bg-primary/90 hover:bg-primary text-black font-medium shadow-sm hover:shadow-md hover:shadow-primary/20",
     default:
-      "flex justify-center items-center group transition-all duration-300 hover:bg-appGrey-400 rounded-md px-3 py-1 border border-foreground/20",
+      "border border-foreground/15 text-foreground/80 hover:text-foreground hover:bg-appGrey-400 hover:border-foreground/25",
   };
 
   const sizeStyle = {
-    sm: "",
-    md: "",
-    lg: "px-3.5 py-2",
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2 text-sm",
+    lg: "px-5 py-2.5 text-sm",
   };
 
-  const classStyle = style[type ?? "text"] + " " + sizeStyle[size ?? "sm"];
+  const base =
+    "inline-flex justify-center items-center gap-2 rounded-md outline-none transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/70 disabled:opacity-60 disabled:pointer-events-none";
+
+  const classStyle = `${base} ${style[type ?? "text"]} ${sizeStyle[size ?? "sm"]}`;
+
   return (
-    <div>
-      <button onClick={onClick} className={`${classStyle} ${className}`}>
-        <div className="flex items-center justify-center gap-1.5 opacity-80 group-hover:opacity-100">
-          {icon && icon}
-          {label && label}
-        </div>
-      </button>
-    </div>
+    <button
+      type={htmlType ?? "button"}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={ariaLabel ?? (typeof label === "string" ? label : undefined)}
+      className={`${classStyle} ${className ?? ""}`}
+    >
+      {icon}
+      {label}
+    </button>
   );
 };
 

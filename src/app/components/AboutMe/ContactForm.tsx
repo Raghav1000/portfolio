@@ -9,34 +9,34 @@ type TFormData = {
   message: string;
 };
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState<TFormData>({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+type TStatus = {
+  type: "idle" | "sending" | "success" | "error";
+  message: string;
+};
 
-  const [status, setStatus] = useState("");
+const initialForm: TFormData = { name: "", email: "", phone: "", message: "" };
+
+const inputClass =
+  "h-11 w-full rounded-md border border-white/15 bg-white/[0.02] px-3 text-sm text-foreground placeholder:text-foreground-muted outline-none transition-colors focus:border-primary/60";
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState<TFormData>(initialForm);
+  const [status, setStatus] = useState<TStatus>({ type: "idle", message: "" });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    setStatus("Sending...");
+    setStatus({ type: "sending", message: "Sending..." });
 
     const web3FormData = new FormData();
     web3FormData.append("access_key", "567e6196-94b5-443c-89ca-a7421d509d87");
-
-    Object.keys(formData).forEach((key) => {
-      web3FormData.append(key, formData[key as keyof TFormData]);
+    Object.entries(formData).forEach(([key, value]) => {
+      web3FormData.append(key, value);
     });
 
     try {
@@ -44,72 +44,97 @@ const ContactForm = () => {
         method: "POST",
         body: web3FormData,
       });
-
       const data = await response.json();
 
       if (data.success) {
-        setStatus("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setStatus({
+          type: "success",
+          message: "Your message has been sent successfully!",
+        });
+        setFormData(initialForm);
       } else {
-        console.error("Error:", data);
-        setStatus(data.message);
+        setStatus({
+          type: "error",
+          message: data.message || "Something went wrong. Please try again.",
+        });
       }
     } catch (error) {
-      console.error("Error:", error);
-      setStatus("There was an error sending your message.");
+      setStatus({
+        type: "error",
+        message: "There was an error sending your message.",
+      });
     }
 
-    setTimeout(() => {
-      setStatus("");
-    }, 3000);
+    setTimeout(() => setStatus({ type: "idle", message: "" }), 4000);
   };
 
+  const isSending = status.type === "sending";
+
   return (
-    <div className="flex flex-col gap-6 mt-5 md:mt-0 md:ml-20">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      <div className="grid gap-3 sm:grid-cols-2">
         <input
+          aria-label="Name"
           placeholder="Name"
           name="name"
           required
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          className={inputClass}
           value={formData.name}
           onChange={handleChange}
         />
         <input
+          aria-label="Email"
           placeholder="Email"
           name="email"
           required
           type="email"
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
+          className={inputClass}
           value={formData.email}
           onChange={handleChange}
         />
-        <input
-          placeholder="Phone"
-          name="phone"
-          // required
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
-          value={formData.phone}
-          onChange={handleChange}
-        />
-        <textarea
-          rows={4}
-          name="message"
-          required
-          placeholder="Message"
-          className="flex w-full rounded-md border border-gray-700 bg-transparent px-3 py-2 text-sm placeholder:text-foreground-muted"
-          value={formData.message}
-          onChange={handleChange}
-        ></textarea>
-        <Button
-          label="Submit"
-          type="primary"
-          className="w-full"
-          size="sm"
-        />
-      </form>
-      {status && <p className="text-center">{status}</p>}
-    </div>
+      </div>
+      <input
+        aria-label="Phone (optional)"
+        placeholder="Phone (optional)"
+        name="phone"
+        type="tel"
+        className={inputClass}
+        value={formData.phone}
+        onChange={handleChange}
+      />
+      <textarea
+        aria-label="Message"
+        rows={4}
+        name="message"
+        required
+        placeholder="Message"
+        className={`${inputClass} h-auto py-2.5 resize-y`}
+        value={formData.message}
+        onChange={handleChange}
+      />
+      <Button
+        label={isSending ? "Sending..." : "Send Message"}
+        type="primary"
+        className="w-full"
+        size="lg"
+        htmlType="submit"
+        disabled={isSending}
+      />
+      {status.message && (
+        <p
+          role="status"
+          className={`text-center text-sm ${
+            status.type === "success"
+              ? "text-green-400"
+              : status.type === "error"
+              ? "text-red-400"
+              : "text-foreground-muted"
+          }`}
+        >
+          {status.message}
+        </p>
+      )}
+    </form>
   );
 };
 

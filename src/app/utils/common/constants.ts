@@ -1,3 +1,9 @@
+export const GITHUB_URL = "https://www.github.com/Raghav1000";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/raghav-m-647180328";
+export const EMAIL = "raghav.code.business@gmail.com";
+export const PHONE = "+919727974642";
+export const RESUME_PATH = "/resume.pdf";
+
 export const careerData = {
   bitontree: {
     companyName: "Bitontree Solutions",

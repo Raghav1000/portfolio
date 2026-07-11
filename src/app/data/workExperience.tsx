@@ -2,6 +2,7 @@ export const workExperience = [
   {
     title: "Bitontree Solutions",
     workSpan: "Aug 2022 - Sep 2023",
+    duration: "1 year",
     role: "FullStack Developer",
     location: "Ahmedabad, India",
     type: "On Site",
@@ -13,6 +14,7 @@ export const workExperience = [
   {
     title: "Protocolzone Pvt. Ltd",
     workSpan: "Oct 2023 - Oct 2025",
+    duration: "2 years",
     role: "Fullstack Developer",
     location: "Ahmedabad, India",
     type: "On Site",

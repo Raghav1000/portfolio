@@ -1,65 +1,40 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { GoLinkExternal } from "react-icons/go";
+import { HiArrowLeft } from "react-icons/hi";
 import { GrGithub } from "react-icons/gr";
 import Button from "../components/UI/Button/Button";
+import { GITHUB_URL } from "../utils/common/constants";
 
 const ProjectsList = () => {
   const router = useRouter();
+
   return (
-    <div className="py-8 pt-20 md:py-16 lg:pt-32">
-      <h2 className="text-4xl mb-10">Personal Projects</h2>
-      <div className="grid grid-cols-1 md:flex md:flex-col">
-        {[
-          { title: "Title", key: "project1" },
-          { title: "Title", key: "project1" },
-          { title: "Title", key: "project1" },
-          { title: "Title", key: "project1" },
-          { title: "Title", key: "project1" },
-          { title: "Title", key: "project1" },
-        ]?.map((item) => (
-          <div
-            key={item?.key}
-            onClick={() => router.push("/blogs/id")}
-            className="flex flex-col md:flex-row gap-3 pb-4 border-b border-primary/35 group cursor-pointer my-7"
-          >
-            <div>
-              <Image
-                src="/images/project-1.avif"
-                alt="python-course"
-                className="rounded-md"
-                height={45}
-                width={200}
-              />
-            </div>
-            <div>
-              <h4 className="text-2xl text-text mb-2">{item?.title}</h4>
-              <div className="flex gap-4 font-light text-text/40 text-sm max-w-[500px] opacity-80">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente eius architecto minima! Illum, tempore facere sunt
-                doloremque quis ducimus, numquam perferendis ab inventore nam
-                repudiandae sit, voluptate temporibus soluta officia?
-              </div>
-            </div>
-            <div className="flex gap-2 md:ml-auto mt-auto">
-              <Button
-                icon={<GrGithub size={18} />}
-                size={"sm"}
-                type="default"
-                onClick={(e) => {
-                  window.open("https://www.github.com/Raghav1000", "_blank");
-                }}
-              />
-              <Button
-                icon={<GoLinkExternal size={18} />}
-                size={"sm"}
-                type="default"
-                //   onClick={() => push("www.github.com")}
-              />
-            </div>
-          </div>
-        ))}
+    <div className="min-h-[70vh] py-24 lg:pt-32 flex flex-col items-center justify-center text-center gap-5">
+      <span className="text-primary text-xs font-medium uppercase tracking-[0.2em]">
+        Projects
+      </span>
+      <h1 className="text-3xl sm:text-4xl font-semibold">
+        Personal projects, coming soon
+      </h1>
+      <p className="text-foreground-muted max-w-md">
+        I&apos;m currently curating a selection of my personal work. In the
+        meantime, feel free to explore my repositories on GitHub.
+      </p>
+      <div className="flex flex-wrap justify-center gap-3 mt-2">
+        <Button
+          icon={<GrGithub size={18} />}
+          label="View GitHub"
+          type="primary"
+          size="lg"
+          onClick={() => window.open(GITHUB_URL, "_blank")}
+        />
+        <Button
+          icon={<HiArrowLeft size={16} />}
+          label="Back to home"
+          type="default"
+          size="lg"
+          onClick={() => router.push("/")}
+        />
       </div>
     </div>
   );

@@ -4,50 +4,56 @@ import Button from "../UI/Button/Button";
 import Image from "next/image";
 import { TbRoute } from "react-icons/tb";
 import { useRouter } from "next/navigation";
+import SectionHeading from "../UI/SectionHeading/SectionHeading";
 
 const ProfessionalCareer = () => {
-  const route = useRouter();
+  const router = useRouter();
+
   return (
-    <div className="my-8 md:my-16">
-      <div className="grid rounded-md dark:bg-[#222322] bg-[#eaeaea] border dark:border-white/10 border-black/15 shadow-md py-4 px-2 md:p-6">
-        <h4 className="text-left text-3xl mb-5 border-b border-green-200 w-max">
-          Professional Career
-        </h4>
+    <section className="my-20 md:my-28">
+      <SectionHeading eyebrow="Experience">Professional Career</SectionHeading>
+
+      <div className="flex flex-col gap-4">
         {workExperience?.map((item) => (
           <div
-            key={item?.title}
-            className="flex flex-col gap-4 mt-8 sm:mt-0 md:p-6"
+            key={item?.key}
+            className="rounded-xl border border-white/10 bg-white/[0.02] p-5 md:p-6 transition-colors hover:border-primary/30"
           >
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Image
                 src={item?.image}
                 alt={item?.title}
-                width={35}
-                className="rounded-full h-10 w-10 shadow-md border"
-                height={35}
+                width={48}
+                height={48}
+                className="rounded-full h-12 w-12 object-cover shadow-md border border-white/10 shrink-0"
               />
-              <div className="flex flex-col">
-                <h4 className="text-lg text-foreground">{item?.title}</h4>
-                <div className="flex justify-between text-sm text-foreground/50">
-                  <span>
-                    {item?.role} . {item?.type}{" "}
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h3 className="text-lg font-medium text-foreground">
+                      {item?.title}
+                    </h3>
+                    <p className="text-sm text-foreground-muted">
+                      {item?.role} · {item?.type}
+                    </p>
+                    <p className="text-sm text-foreground-muted">
+                      {item?.location} · {item?.workSpan}
+                    </p>
+                  </div>
+                  <span className="shrink-0 px-2.5 py-1 border border-primary/30 rounded-full text-xs text-primary">
+                    {item?.duration}
                   </span>
                 </div>
-                <div className="text-sm text-foreground/50">
-                  {item?.location} . {item?.workSpan}
-                </div>
-                <div className="text-[15px] mt-6 leading-">
+
+                <p className="text-sm md:text-[15px] mt-4 leading-6 text-foreground-muted">
                   {item?.description}
-                </div>
-                <div className="flex items-center justify-between mt-5">
-                  <div className="hidden md:block px-2 py-0.5 border border-green-600/30 rounded-sm text-foreground">
-                    <span>{item?.role} </span> -{" "}
-                    {item?.key == "bitontree" ? 1 : 2} year
-                  </div>
+                </p>
+
+                <div className="flex justify-end mt-5">
                   <Button
-                    onClick={() => route.push(`professional/${item?.key}`)}
+                    onClick={() => router.push(`/professional/${item?.key}`)}
                     label="View Journey"
-                    icon={<TbRoute />}
+                    icon={<TbRoute size={16} />}
                     type="default"
                     size="sm"
                   />
@@ -57,7 +63,7 @@ const ProfessionalCareer = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

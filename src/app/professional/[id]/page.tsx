@@ -1,72 +1,78 @@
 "use client";
 import { TbWorldWww } from "react-icons/tb";
+import { HiArrowLeft } from "react-icons/hi";
 import { careerData } from "@/app/utils/common/constants";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const ProfessionalCareerInfo = () => {
   const params = useParams();
-  const careerObj = careerData[params?.id as "bitontree" | "protocolzone"];
+  const careerObj = careerData[params?.id as keyof typeof careerData];
+
+  if (!careerObj) {
+    return (
+      <div className="py-32 text-center">
+        <h2 className="text-2xl mb-4">Company not found</h2>
+        <Link href="/" className="text-primary hover:underline">
+          Back to home
+        </Link>
+      </div>
+    );
+  }
 
   return (
-    <div className="py-16 md:py-16 lg:pt-32">
-      <h2 className="text-4xl">{careerObj?.companyName}</h2>
-      <div className="flex gap-5 items-center text-sm md:text-base mt-5 text-gray-400">
-        <Link href={careerObj?.companyWebsite}>
-          <span className="text-blue-400">
-            <TbWorldWww size={20} />
-          </span>
+    <div className="py-24 lg:pt-32 lg:pb-16">
+      <Link
+        href="/"
+        className="inline-flex items-center gap-2 text-sm text-foreground-muted hover:text-primary transition-colors mb-8"
+      >
+        <HiArrowLeft size={16} /> Back to home
+      </Link>
+
+      <h1 className="text-3xl sm:text-4xl font-semibold">
+        {careerObj.companyName}
+      </h1>
+      <div className="flex flex-wrap gap-4 items-center text-sm md:text-base mt-4 text-foreground-muted">
+        <Link
+          href={careerObj.companyWebsite}
+          target="_blank"
+          className="text-primary hover:text-primary/80"
+          aria-label="Company website"
+        >
+          <TbWorldWww size={20} />
         </Link>
-        <span className="">{careerObj?.duration}</span>
-        <span className="">{careerObj?.timePeriod}</span>
+        <span>{careerObj.duration}</span>
+        <span>{careerObj.timePeriod}</span>
       </div>
 
-      <h3 className="text-sm md:text-lg mt-10 tracking-widest border-b w-max opacity-85">
-        Projects I did as a part of this company
+      <h3 className="text-sm md:text-base mt-12 mb-6 uppercase tracking-widest text-foreground-muted border-b border-white/10 pb-2 w-max">
+        Projects I worked on at this company
       </h3>
-      {/* {careerObj?.projects?.map((item) => (
-        <div
-          key={item?.product}
-          className="my-5 grid rounded-md border dark:border-white/10 border-black/15 shadow-md p-6"
-        >
-          <h4 className="text-sm">{item?.role}</h4>
-          <h4 className="text-lg">{item?.product}</h4>
-          <div className="flex gap-2 mt-3">
-            {item?.techStack?.map((item) => (
-              <div
-                key={item}
-                className="px-2 w-max py-0.5 border border-green-600/30 rounded-sm text-sm text-foreground"
-              >
-                <span>{item} </span>
-              </div>
-            ))}
+
+      <div className="flex flex-col gap-5">
+        {careerObj.projects?.map((item) => (
+          <div
+            key={item.product}
+            className="rounded-xl border border-white/10 bg-white/[0.02] p-6"
+          >
+            <span className="text-sm text-foreground-muted">{item.role}</span>
+            <h4 className="text-lg text-primary font-medium">{item.product}</h4>
+            <div className="flex gap-2 mt-3 flex-wrap">
+              {item.techStack?.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2.5 py-0.5 border border-primary/30 rounded-full text-xs text-foreground/90"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="mt-6 text-foreground-muted break-words text-sm md:text-[15px] leading-7">
+              {item.description}
+            </p>
           </div>
-          <div className="pt-7 text-gray-400">{item?.description}</div>
-        </div>
-      ))} */}
-      {careerObj?.projects?.map((item) => (
-        <div
-          key={item?.product}
-          className="my-5 grid rounded-md border dark:border-white/10 border-black/15 shadow-md p-6"
-          style={{ maxWidth: "100%" }}
-        >
-          <h4 className="text-sm">{item?.role}</h4>
-          <h4 className="text-lg text-primary">{item?.product}</h4>
-          <div className="flex gap-2 mt-3 flex-wrap">
-            {item?.techStack?.map((tech) => (
-              <div
-                key={tech}
-                className="px-2 w-max py-0.5 border border-green-600/30 rounded-sm text-sm text-foreground"
-              >
-                <span>{tech}</span>
-              </div>
-            ))}
-          </div>
-          <p className="pt-7 text-gray-400 break-words overflow-wrap text-sm md:text-base">
-            {item?.description}
-          </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

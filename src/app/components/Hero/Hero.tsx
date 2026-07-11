@@ -1,43 +1,47 @@
-import React from "react";
 import Button from "../UI/Button/Button";
-import { GrProjects } from "react-icons/gr";
+import { HiArrowDown } from "react-icons/hi";
+import { FiFileText } from "react-icons/fi";
 import DraggableButton from "./DraggableButton";
 import Link from "next/link";
+import { RESUME_PATH } from "@/app/utils/common/constants";
 
 const Hero = () => {
   return (
-    <div className="py-8 md:py-16 pt-20 lg:pt-32">
-      <DraggableButton />
+    <section className="py-16 pt-28 lg:pt-36 lg:pb-24">
       <div className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-foreground text-4xl sm:text-5xl sm:leading-none lg:text-7xl mt-5">
-          <span className="block text-[#F4FFFA00] bg-clip-text bg-gradient-to-b from-foreground to-foreground">
-            Full stack developer
-          </span>
-          <span className="text-transparent leading-normal bg-clip-text bg-gradient-to-br from-primary via-primary to-primary/70 block md:ml-0">
+        <DraggableButton />
+        <h1 className="mt-6 text-foreground text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.1]">
+          <span className="block">Full Stack Developer</span>
+          <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary to-primary/60">
             Raghav Mattad
           </span>
         </h1>
-        <p className="pt-2 text-foreground text-sm sm:mt-2 lg:mb-0 sm:text-base lg:text-lg md:w-[75%] lg:w-[60%]">
+        <p className="mt-6 text-foreground-muted text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed">
           A full-stack developer with over three years of experience delivering
-          innovative, scalable, efficient web and cloud-based solutions,
-          dedicated to transform complex challenges into seamless digital
+          innovative, scalable, and efficient web and cloud-based solutions —
+          dedicated to transforming complex challenges into seamless digital
           experiences.
         </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-9">
+          <Link href={RESUME_PATH} target="_blank">
+            <Button
+              icon={<FiFileText size={16} />}
+              label="View Resume"
+              type="primary"
+              size="lg"
+            />
+          </Link>
+          <Link href="/#contact">
+            <Button
+              icon={<HiArrowDown size={16} />}
+              label="Get in touch"
+              type="default"
+              size="lg"
+            />
+          </Link>
+        </div>
       </div>
-      <div className="flex items-center justify-center text-sm gap-5 my-5">
-        <Link href="/resume.pdf" target="_blank">
-          <Button
-            icon={<GrProjects />}
-            label="View Portfolio"
-            type="primary"
-            size="lg"
-          />
-        </Link>
-        <Link href={"/#contact"}>
-          <Button label="Contact me" type="default" size="lg" />
-        </Link>
-      </div>
-    </div>
+    </section>
   );
 };
 

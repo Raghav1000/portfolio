@@ -2,68 +2,66 @@ import Image from "next/image";
 import Button from "../UI/Button/Button";
 import { BiDownload } from "react-icons/bi";
 import { CiViewTimeline } from "react-icons/ci";
+import SectionHeading from "../UI/SectionHeading/SectionHeading";
+import { RESUME_PATH } from "@/app/utils/common/constants";
 
 const AboutMe = () => {
   return (
-    <div className="my-8 md:my-16">
-      <h4
-        id="about"
-        className="text-left text-3xl mb-5 border-b border-green-200 w-max"
-      >
+    <section className="my-20 md:my-28">
+      <SectionHeading id="about" eyebrow="Introduction">
         Discover About Me
-      </h4>
-      <div className="grid lg:grid-cols-2">
+      </SectionHeading>
+      <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:gap-16 items-start">
         <div>
-          <h1 className="text-lg font-medium mb-3">
-            Hello, This is <span className="text-primary">Raghav Mattad</span>
-          </h1>
-          <h6 className="leading-7 tracking-wide text-base font-light mb-5">
-            Versatile fullstack developer with 3 of experience in building
-            robust, scalable web applications. Proficient in diverse
-            technologies spanning frontend (React), backend (Node.js and Go lang), database
-            (MongoDB, PostgreSQL, Bigtable), and DevOps (Docker, AWS, GCP). Demonstrated
-            expertise in crafting responsive user interfaces, designing RESTful
-            APIs, and implementing CI/CD pipelines. Adept at quickly adapting to
-            new technologies and methodologies to meet evolving project
-            requirements.
-          </h6>
-          <h6 className="leading-7 tracking-wide text-base font-light mb-5">
+          <h3 className="text-xl font-medium mb-4">
+            Hello, I&apos;m <span className="text-primary">Raghav Mattad</span>
+          </h3>
+          <p className="leading-7 tracking-wide text-sm sm:text-base text-foreground-muted mb-5">
+            Versatile full-stack developer with 3+ years of experience building
+            robust, scalable web applications. Proficient in diverse technologies
+            spanning frontend (React), backend (Node.js and Go), databases
+            (MongoDB, PostgreSQL, Bigtable), and DevOps (Docker, AWS, GCP).
+            Demonstrated expertise in crafting responsive user interfaces,
+            designing RESTful APIs, and implementing CI/CD pipelines. Adept at
+            quickly adapting to new technologies and methodologies to meet
+            evolving project requirements.
+          </p>
+          <p className="leading-7 tracking-wide text-sm sm:text-base text-foreground-muted">
             Seeking to leverage comprehensive technical skills and innovative
             problem-solving abilities to contribute to cutting-edge development
             projects. Common interests other than coding include Football,
-            Travelling, Videomaking and PC games.
-          </h6>
-          <div></div>
+            Travelling, Videomaking, and PC games.
+          </p>
         </div>
-        <div className="flex flex-col justify-around">
-          <Image
-            className="mx-auto rounded-md"
-            src="/images/profile2.jpeg"
-            alt="profile-pic"
-            height={600}
-            width={260}
-          />
-          <div className="flex mx-auto  mt-5 lg:mt-5 gap-3">
-            <a href="/resume.pdf" target="_blank">
+        <div className="flex flex-col items-center gap-6 mx-auto">
+          <div className="relative w-52 sm:w-60 aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
+            <Image
+              src="/images/profile2.jpeg"
+              alt="Raghav Mattad"
+              fill
+              sizes="(max-width: 640px) 208px, 240px"
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a href={RESUME_PATH} target="_blank">
               <Button
-                icon={<CiViewTimeline />}
+                icon={<CiViewTimeline size={18} />}
                 type="default"
                 label="View Resume"
-                className="ml-auto"
               />
             </a>
-            <a href="/resume.pdf" download="Raghav_Mattad_Resume.pdf">
+            <a href={RESUME_PATH} download="Raghav_Mattad_Resume.pdf">
               <Button
-                icon={<BiDownload />}
+                icon={<BiDownload size={18} />}
                 type="primary"
                 label="Download Resume"
-                className="ml-auto"
               />
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

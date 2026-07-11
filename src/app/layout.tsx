@@ -8,8 +8,9 @@ import Footer from "./components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Raghav Mattad : Software Developer",
-  description: "Welcome to my Professional Software Journey",
+  title: "Raghav Mattad — Full Stack Developer",
+  description:
+    "Full-stack developer with 3+ years of experience building scalable web and cloud-based solutions. React, Node.js, Go, GCP & AWS.",
 };
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
           <AppContainer>
             <Navbar />
-            <div className="px-5 lg:px-20 xl:px-40">{children}</div>
+            <main className="max-w-content mx-auto px-5 lg:px-12">{children}</main>
             <Footer />
           </AppContainer>
       </body>

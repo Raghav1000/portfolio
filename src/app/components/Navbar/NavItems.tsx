@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const NavItems = () => {
   return (
-    <div className="hidden lg:flex text-sm gap-4 lg:mx-10">
+    <div className="hidden lg:flex text-sm gap-6 mx-10 text-foreground-muted">
       {navMenuItems?.map((item) => (
         <Link
           key={item?.url}
           href={item?.url}
-          className="transition-all duration-300 hover:text-primary"
+          className="transition-colors duration-200 hover:text-primary"
         >
           {item?.title}
         </Link>

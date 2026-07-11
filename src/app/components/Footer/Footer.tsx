@@ -6,60 +6,65 @@ import { BsLinkedin } from "react-icons/bs";
 import { GrGithub } from "react-icons/gr";
 import Button from "../UI/Button/Button";
 import Link from "next/link";
+import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  PHONE,
+  RESUME_PATH,
+} from "@/app/utils/common/constants";
 
 const Footer = () => {
   return (
-    <div className="px-5 lg:px-20 xl:px-40 border-t border-t-primary/50 h-20 w-screen flex items-center justify-between">
-      <h3 className="text-primary text-lg font-medium hidden sm:block">
-        <Link href="/">
-          Raghav Mattad <span className="text-center text-xs">Portfolio</span>
+    <footer className="mt-auto border-t border-white/10">
+      <div className="max-w-content mx-auto px-5 lg:px-12 h-20 flex items-center justify-between gap-4">
+        <Link href="/" className="flex items-baseline gap-1.5">
+          <span className="text-primary text-base sm:text-lg font-semibold tracking-tight">
+            <span className="hidden sm:inline">Raghav Mattad</span>
+            <span className="sm:hidden">RM</span>
+          </span>
+          <span className="text-foreground-muted text-xs uppercase tracking-widest">
+            Portfolio
+          </span>
         </Link>
-      </h3>
-      <h3 className="text-primary text-lg font-medium block sm:hidden">
-        <Link href="/">
-          R M <span className="text-center text-xs">Portfolio</span>
-        </Link>
-      </h3>
-      <div className="text-sm tracking-widest hidden md:block">
-        &lt; CODE YOUR FUTURE &gt;
+        <div className="text-xs tracking-widest text-foreground-muted hidden md:block">
+          &lt; CODE YOUR FUTURE &gt;
+        </div>
+        <div className="flex gap-1">
+          <Button
+            icon={<GrGithub size={20} />}
+            type="text"
+            ariaLabel="GitHub profile"
+            onClick={() => window.open(GITHUB_URL, "_blank")}
+          />
+          <Button
+            icon={<BsLinkedin size={20} />}
+            type="text"
+            ariaLabel="LinkedIn profile"
+            onClick={() => window.open(LINKEDIN_URL, "_blank")}
+          />
+          <Button
+            icon={<BiMailSend size={22} />}
+            type="text"
+            ariaLabel="Send an email"
+            onClick={() => (window.location.href = `mailto:${EMAIL}`)}
+          />
+          <a href={RESUME_PATH} target="_blank">
+            <Button
+              icon={<AiFillFilePdf size={20} />}
+              type="text"
+              ariaLabel="View resume"
+            />
+          </a>
+          <Button
+            icon={<MdPermContactCalendar size={20} />}
+            type="text"
+            ariaLabel="Call"
+            onClick={() => (window.location.href = `tel:${PHONE}`)}
+          />
+        </div>
       </div>
-      <div className="flex gap-1">
-        <Button
-          icon={<GrGithub size={20} />}
-          size={"sm"}
-          type="text"
-          onClick={() =>
-            window.open("https://www.github.com/Raghav1000", "_blank")
-          }
-        />
-        <Button
-          icon={<BsLinkedin size={20} />}
-          size={"sm"}
-          type="text"
-          onClick={() =>
-            window.open(
-              "https://www.linkedin.com/in/raghav-m-647180328",
-              "_blank"
-            )
-          }
-        />
-        <Button
-          icon={<BiMailSend size={22} />}
-          size={"sm"}
-          type="text"
-          onClick={() => (window.location.href = "mailto:raghav.code.business@gmail.com")}
-        />
-        <a href="/resume.pdf" target="_blank">
-          <Button icon={<AiFillFilePdf size={20} />} size={"lg"} type="text" />
-        </a>
-        <Button
-          icon={<MdPermContactCalendar size={20} />}
-          size={"sm"}
-          type="text"
-          onClick={() => (window.location.href = "tel:+919727974642")}
-        />
-      </div>
-    </div>
+    </footer>
   );
 };
 
