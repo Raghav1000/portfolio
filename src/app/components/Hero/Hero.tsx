@@ -6,68 +6,77 @@ import DraggableButton from "./DraggableButton";
 import Link from "next/link";
 import { RESUME_PATH } from "@/app/utils/common/constants";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { DEFAULT_EASE } from "@/app/utils/common/animation";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 const container = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
-  },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: DEFAULT_EASE },
-  },
+const up = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: EASE } },
 };
+
+const techStack = [
+  "React",
+  "Next.js",
+  "Node.js",
+  "Golang",
+  "GCP",
+  "GenAI",
+];
 
 const Hero = () => {
   return (
     <LazyMotion features={domAnimation}>
-      <section className="relative py-16 pt-28 lg:pt-36 lg:pb-24 overflow-hidden">
-        {/* soft ambient glow behind the header */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-10 -z-10 h-72 w-72 md:h-96 md:w-96 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
-        />
+      <section className="relative overflow-hidden pt-32 lg:pt-44 pb-16 lg:pb-24">
+        {/* background: subtle grid + soft gold glow */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          <div className="hero-grid absolute inset-0" />
+          <div className="absolute left-1/2 top-[-4rem] h-[420px] w-[min(90vw,620px)] -translate-x-1/2 rounded-full bg-primary/20 blur-[130px] opacity-70" />
+        </div>
 
         <m.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center justify-center text-center"
+          className="flex flex-col items-center text-center"
         >
-          <m.div variants={item}>
+          <m.div variants={up}>
             <DraggableButton />
           </m.div>
 
-          <m.h1
-            variants={item}
-            className="mt-6 text-foreground text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.1]"
+          <m.p
+            variants={up}
+            className="mt-7 text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-primary"
           >
-            <span className="block">Full Stack Developer</span>
-            <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary to-primary/60">
+            Full Stack Developer · GenAI
+          </m.p>
+
+          <m.h1
+            variants={up}
+            className="mt-3 text-5xl sm:text-6xl lg:text-8xl font-semibold tracking-tight leading-[1.02]"
+          >
+            <span className="text-shimmer bg-gradient-to-r from-[#F7ECC9] via-primary to-[#F7ECC9] bg-clip-text text-transparent">
               Raghav Mattad
             </span>
           </m.h1>
 
           <m.p
-            variants={item}
-            className="mt-6 text-foreground-muted text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed"
+            variants={up}
+            className="mt-6 text-foreground-muted text-sm sm:text-base lg:text-lg max-w-xl lg:max-w-2xl leading-relaxed"
           >
-            A full-stack developer with four years of experience shipping
-            scalable web and cloud-based solutions end-to-end — React & Next.js
-            frontends, Node.js and Golang backends, and production{" "}
-            <span className="text-primary">GenAI</span> features built with
-            Gemini and Claude.
+            I build scalable web &amp; cloud products end-to-end — React &amp;
+            Next.js frontends, Node.js and Golang backends — and ship production{" "}
+            <span className="text-foreground">GenAI</span> features with Gemini
+            and Claude.
           </m.p>
 
           <m.div
-            variants={item}
-            className="flex flex-wrap items-center justify-center gap-3 mt-9"
+            variants={up}
+            className="flex flex-wrap items-center justify-center gap-3 mt-8"
           >
             <Link href={RESUME_PATH} target="_blank">
               <Button
@@ -86,6 +95,22 @@ const Hero = () => {
               />
             </Link>
           </m.div>
+
+          <m.ul
+            variants={up}
+            className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-foreground-muted"
+          >
+            {techStack.map((tech, i) => (
+              <li key={tech} className="flex items-center gap-x-5">
+                {i > 0 && (
+                  <span className="h-1 w-1 rounded-full bg-primary/50" />
+                )}
+                <span className="transition-colors hover:text-foreground">
+                  {tech}
+                </span>
+              </li>
+            ))}
+          </m.ul>
         </m.div>
       </section>
     </LazyMotion>

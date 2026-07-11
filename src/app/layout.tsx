@@ -23,7 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
           <AppContainer>
             <Navbar />
-            <main className="max-w-content mx-auto px-5 lg:px-12">{children}</main>
+            <main className="w-full min-w-0 max-w-content mx-auto px-5 lg:px-12">
+              {children}
+            </main>
             <Footer />
           </AppContainer>
       </body>

@@ -20,7 +20,7 @@ const Contact = () => {
         <SectionHeading eyebrow="Contact">Get in touch</SectionHeading>
 
         <div className="grid gap-10 md:grid-cols-2">
-          <div className="flex flex-col justify-between gap-8">
+          <div className="flex flex-col justify-between gap-8 min-w-0">
             <div className="flex flex-col gap-4 text-sm sm:text-base text-foreground-muted leading-relaxed">
               <p>
                 I&apos;m always open to connecting and discussing new projects,
@@ -32,12 +32,12 @@ const Contact = () => {
               </p>
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-primary hover:underline w-max"
+                className="text-primary hover:underline break-all"
               >
                 {EMAIL}
               </a>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <Button
                 icon={<GrGithub size={20} />}
                 size={"lg"}

@@ -50,7 +50,7 @@ const ProfessionalCareerInfo = () => {
         <span>{careerObj.timePeriod}</span>
       </div>
 
-      <h3 className="text-sm md:text-base mt-12 mb-6 uppercase tracking-widest text-foreground-muted border-b border-white/10 pb-2 w-max">
+      <h3 className="text-sm md:text-base mt-12 mb-6 uppercase tracking-wide sm:tracking-widest text-foreground-muted border-b border-white/10 pb-2">
         Projects I worked on at this company
       </h3>
 

@@ -71,7 +71,7 @@ const ContactForm = () => {
   const isSending = status.type === "sending";
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 min-w-0">
       <div className="grid gap-3 sm:grid-cols-2">
         <input
           aria-label="Name"

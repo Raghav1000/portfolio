@@ -21,6 +21,38 @@ div[id="contact"] {
   scroll-margin-top: 6rem;
 }
 
+/* Animated gold shimmer sweep for the hero name */
+.text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 5s linear infinite;
+}
+@keyframes text-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Subtle grid texture behind the hero, faded out toward the edges */
+.hero-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 65% 55% at 50% 38%,
+    #000 0%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 65% 55% at 50% 38%,
+    #000 0%,
+    transparent 78%
+  );
+}
+
 /* Hide scrollbar while keeping scroll behaviour */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

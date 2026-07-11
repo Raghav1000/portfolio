@@ -15,8 +15,8 @@ const Skills = () => {
         Technologies I&apos;ve worked with
       </SectionHeading>
 
-      <div className="flex flex-col gap-8">
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1">
+      <div className="flex flex-col gap-8 min-w-0">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1 min-w-0">
           {skillsTitle?.map((item) => (
             <button
               key={item?.value}
