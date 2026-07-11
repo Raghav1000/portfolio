@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="gem" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4285F4"/>
+      <stop offset="0.5" stop-color="#9B72F2"/>
+      <stop offset="1" stop-color="#D96570"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 1c.4 5.6 4.4 9.6 10 10-5.6.4-9.6 4.4-10 10-.4-5.6-4.4-9.6-10-10C7.6 10.6 11.6 6.6 12 1Z" fill="url(#gem)"/>
+</svg>

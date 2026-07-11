@@ -1,5 +1,6 @@
 import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/Contact/Contact";
+import GenAI from "./components/GenAI/GenAI";
 import Hero from "./components/Hero/Hero";
 import PersonalStats from "./components/PersonalStats/PersonalStats";
 import ProfessionalCareer from "./components/ProfessionalCareer/ProfessionalCareer";
@@ -12,8 +13,8 @@ const Home = () => {
       <PersonalStats />
       <AboutMe />
       <Skills />
+      <GenAI />
       <ProfessionalCareer />
-      {/* <Projects /> */}
       <Contact />
     </>
   );

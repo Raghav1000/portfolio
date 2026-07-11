@@ -17,19 +17,20 @@ const AboutMe = () => {
             Hello, I&apos;m <span className="text-primary">Raghav Mattad</span>
           </h3>
           <p className="leading-7 tracking-wide text-sm sm:text-base text-foreground-muted mb-5">
-            Versatile full-stack developer with 3+ years of experience building
+            Versatile full-stack developer with 4 years of experience building
             robust, scalable web applications. Proficient in diverse technologies
-            spanning frontend (React), backend (Node.js and Go), databases
-            (MongoDB, PostgreSQL, Bigtable), and DevOps (Docker, AWS, GCP).
-            Demonstrated expertise in crafting responsive user interfaces,
-            designing RESTful APIs, and implementing CI/CD pipelines. Adept at
-            quickly adapting to new technologies and methodologies to meet
-            evolving project requirements.
+            spanning frontend (React, Next.js), backend (Node.js and Golang),
+            databases (MongoDB, PostgreSQL, Bigtable), and DevOps (Docker,
+            Kubernetes, AWS, GCP). Demonstrated expertise in crafting responsive
+            user interfaces, designing RESTful APIs, and implementing CI/CD
+            pipelines — much of it within a live horse-racing betting platform.
           </p>
           <p className="leading-7 tracking-wide text-sm sm:text-base text-foreground-muted">
-            Seeking to leverage comprehensive technical skills and innovative
-            problem-solving abilities to contribute to cutting-edge development
-            projects. Common interests other than coding include Football,
+            Lately I&apos;ve been building applied{" "}
+            <span className="text-primary">GenAI</span> — shipping production
+            features with Google Gemini and Claude, from a generative jockey-silk
+            system to natural-language-to-SQL segmentation and custom Claude Code
+            skills. Common interests other than coding include Football,
             Travelling, Videomaking, and PC games.
           </p>
         </div>

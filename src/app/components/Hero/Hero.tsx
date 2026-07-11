@@ -17,10 +17,11 @@ const Hero = () => {
           </span>
         </h1>
         <p className="mt-6 text-foreground-muted text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed">
-          A full-stack developer with over three years of experience delivering
-          innovative, scalable, and efficient web and cloud-based solutions —
-          dedicated to transforming complex challenges into seamless digital
-          experiences.
+          A full-stack developer with four years of experience shipping scalable
+          web and cloud-based solutions end-to-end — React & Next.js frontends,
+          Node.js and Golang backends, and production{" "}
+          <span className="text-primary">GenAI</span> features built with Gemini
+          and Claude.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 mt-9">
           <Link href={RESUME_PATH} target="_blank">

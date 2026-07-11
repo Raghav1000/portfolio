@@ -32,6 +32,11 @@ const ProfessionalCareerInfo = () => {
       <h1 className="text-3xl sm:text-4xl font-semibold">
         {careerObj.companyName}
       </h1>
+      {"partner" in careerObj && careerObj.partner && (
+        <p className="mt-2 text-primary/90">
+          In partnership with {careerObj.partner}
+        </p>
+      )}
       <div className="flex flex-wrap gap-4 items-center text-sm md:text-base mt-4 text-foreground-muted">
         <Link
           href={careerObj.companyWebsite}

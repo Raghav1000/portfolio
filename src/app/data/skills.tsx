@@ -1,3 +1,30 @@
+export const aiSkills = [
+  {
+    tooltip: "Google Gemini",
+    icon: "/icons/ai/gemini.svg",
+  },
+  {
+    tooltip: "Claude",
+    icon: "/icons/ai/claude.svg",
+  },
+  {
+    tooltip: "Prompt Engineering",
+    icon: "/icons/ai/prompt.svg",
+  },
+  {
+    tooltip: "LLM Tool-Use",
+    icon: "/icons/ai/llm.svg",
+  },
+  {
+    tooltip: "NL-to-SQL",
+    icon: "/icons/ai/nlsql.svg",
+  },
+  {
+    tooltip: "Claude Code Skills",
+    icon: "/icons/ai/claude-code.svg",
+  },
+];
+
 export const frontEndSkills = [
   {
     tooltip: "ReactJS",
@@ -154,6 +181,7 @@ export type TSkillsTitle = {
 }[];
 
 export const skillsTitle: TSkillsTitle = [
+  { label: "AI / GenAI", value: "aiSkills", data: aiSkills },
   { label: "Frontend", value: "frontEndSkills", data: frontEndSkills },
   { label: "Backend", value: "backendSkills", data: backEndSkills },
   { label: "Database", value: "databaseSkills", data: databaseSkills },

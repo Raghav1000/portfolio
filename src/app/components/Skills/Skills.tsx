@@ -5,7 +5,7 @@ import Image from "next/image";
 import SectionHeading from "../UI/SectionHeading/SectionHeading";
 
 const Skills = () => {
-  const [currentSkill, setCurrentSkill] = useState<string>("frontEndSkills");
+  const [currentSkill, setCurrentSkill] = useState<string>("aiSkills");
 
   const activeGroup = skillsTitle?.find((item) => item?.value === currentSkill);
 
@@ -32,19 +32,24 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="flex gap-3 flex-wrap">
-          {activeGroup?.data?.map((framework) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {activeGroup?.data?.map((skill) => (
             <div
-              className="tooltip flex items-center justify-center h-14 w-14 bg-white/[0.03] border border-white/10 shadow-sm rounded-xl transition-colors hover:border-primary/40"
-              key={framework?.tooltip}
+              key={skill?.tooltip}
+              className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-3.5 py-3 transition-colors hover:border-primary/40"
             >
-              <Image
-                src={framework?.icon}
-                alt={framework?.tooltip}
-                height={30}
-                width={30}
-              />
-              <span className="tooltip-text">{framework?.tooltip}</span>
+              <span className="flex items-center justify-center h-9 w-9 shrink-0 rounded-lg bg-white/[0.04]">
+                <Image
+                  src={skill?.icon}
+                  alt={skill?.tooltip}
+                  height={22}
+                  width={22}
+                  className="h-[22px] w-[22px] object-contain"
+                />
+              </span>
+              <span className="text-sm text-foreground truncate">
+                {skill?.tooltip}
+              </span>
             </div>
           ))}
         </div>

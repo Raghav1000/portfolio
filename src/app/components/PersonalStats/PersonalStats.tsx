@@ -1,7 +1,7 @@
 const stats = [
-  { value: "3+", label: "Years of Experience" },
-  { value: "20+", label: "Web Dev Technologies" },
-  { value: "15+", label: "Projects Delivered" },
+  { value: "4", label: "Years of Experience" },
+  { value: "20+", label: "Technologies" },
+  { value: "3", label: "Companies Shipped At" },
 ];
 
 const PersonalStats = () => {

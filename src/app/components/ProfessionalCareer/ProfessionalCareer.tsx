@@ -20,19 +20,38 @@ const ProfessionalCareer = () => {
             className="rounded-xl border border-white/10 bg-white/[0.02] p-5 md:p-6 transition-colors hover:border-primary/30"
           >
             <div className="flex flex-col sm:flex-row gap-4">
-              <Image
-                src={item?.image}
-                alt={item?.title}
-                width={48}
-                height={48}
-                className="rounded-full h-12 w-12 object-cover shadow-md border border-white/10 shrink-0"
-              />
+              <div className="flex items-center gap-2 shrink-0">
+                <Image
+                  src={item?.image}
+                  alt={item?.title}
+                  width={48}
+                  height={48}
+                  className="rounded-xl h-12 w-12 object-cover bg-white/5 shadow-md border border-white/10"
+                />
+                {item?.partnerImage && (
+                  <>
+                    <span className="text-foreground-muted text-sm">×</span>
+                    <Image
+                      src={item.partnerImage}
+                      alt={item.partner}
+                      width={48}
+                      height={48}
+                      className="rounded-xl h-12 w-12 object-cover bg-white/5 shadow-md border border-white/10"
+                    />
+                  </>
+                )}
+              </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
                     <h3 className="text-lg font-medium text-foreground">
                       {item?.title}
                     </h3>
+                    {item?.partner && (
+                      <p className="text-sm text-primary/90">
+                        In partnership with {item.partner}
+                      </p>
+                    )}
                     <p className="text-sm text-foreground-muted">
                       {item?.role} · {item?.type}
                     </p>

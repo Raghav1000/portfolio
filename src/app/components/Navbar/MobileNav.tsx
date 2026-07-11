@@ -41,7 +41,7 @@ const MobileNav = () => {
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className="bg-overlay fixed overflow-hidden inset-0 z-50 h-screen max-h-screen w-screen supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] transform"
+                className="bg-overlay fixed overflow-hidden inset-0 z-50 h-screen max-h-screen w-full supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] transform"
               >
                 <div className="absolute px-5 py-3.5 flex items-center justify-between w-full left-0 top-0 z-50 bg-overlay border-b border-white/10">
                   <Link

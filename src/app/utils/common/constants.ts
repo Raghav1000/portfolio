@@ -5,6 +5,28 @@ export const PHONE = "+919727974642";
 export const RESUME_PATH = "/resume.pdf";
 
 export const careerData = {
+  exl: {
+    companyName: "EXL",
+    duration: "Current",
+    timePeriod: "May 2026 - Present",
+    companyWebsite: "https://www.exlservice.com",
+    projects: [
+      {
+        role: "Software Engineer",
+        techStack: ["React", "Node.js", "Metabase", "MicroStrategy"],
+        product: "Reporting Platform Migration",
+        description:
+          "Led the migration of a legacy MicroStrategy (MSTR) reporting suite to Metabase. Built custom React/Node reports pixel-matched to the originals for cases that Metabase could not reproduce natively, ensuring zero loss of reporting fidelity during the transition.",
+      },
+      {
+        role: "Software Engineer",
+        techStack: ["Claude Code", "Prompt Engineering", "Automation"],
+        product: "Claude Code Skill for Documentation & QA",
+        description:
+          "Authored a custom Claude Code skill that automates documentation generation and validation-report QA — codifying internal engineering standards into a repeatable, AI-assisted workflow that reduces manual review effort and improves consistency across teams.",
+      },
+    ],
+  },
   bitontree: {
     companyName: "Bitontree Solutions",
     duration: "1 year",
@@ -50,11 +72,38 @@ export const careerData = {
   },
   protocolzone: {
     companyName: "ProtocolZone Private Limited",
-    duration: "2 years",
-    timePeriod: "27th Oct 2023 - 27 oct 2025",
+    partner: "BetMakers",
+    duration: "2+ years",
+    timePeriod: "Sep 2023 - May 2026",
     companyWebsite: "https://www.protocolzone.com/",
     projects: [
-         {
+      {
+        role: "Full Stack Developer · GenAI",
+        techStack: [
+          "Google Gemini",
+          "Prompt Engineering",
+          "Golang",
+          "React",
+          "SVG",
+        ],
+        product: "AI-Generated Jockey-Silk System",
+        description:
+          "Shipped an AI-generated jockey-silk system end-to-end for the racing platform. A Google Gemini prompt pipeline generated silk descriptions, a Golang service composited pattern layers using the image package, and a React/SVG frontend rendered them crisply across every resolution — replacing manual silk artwork with a fully generative pipeline.",
+      },
+      {
+        role: "Full Stack Developer · GenAI",
+        techStack: [
+          "NestJS",
+          "React",
+          "Prompt Engineering",
+          "NL-to-SQL",
+          "Apache Pinot",
+        ],
+        product: "AI-Assisted Promotions & Segmentation",
+        description:
+          "Built an AI-assisted promotions system end-to-end: prompt-driven promotion-config generation plus a natural-language-to-SQL layer that let operators segment live customers on Apache Pinot by describing audiences in plain English — turning a technical, query-heavy workflow into a conversational one.",
+      },
+      {
         role: "Full stack Developer",
         techStack: [
           "Single spa",
