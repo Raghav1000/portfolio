@@ -29,7 +29,7 @@ const ProfessionalCareerInfo = () => {
         <HiArrowLeft size={16} /> Back to home
       </Link>
 
-      <h1 className="text-3xl sm:text-4xl font-semibold">
+      <h1 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
         {careerObj.companyName}
       </h1>
       {"partner" in careerObj && careerObj.partner && (
@@ -61,7 +61,9 @@ const ProfessionalCareerInfo = () => {
             className="rounded-xl border border-white/10 bg-white/[0.02] p-6"
           >
             <span className="text-sm text-foreground-muted">{item.role}</span>
-            <h4 className="text-lg text-primary font-medium">{item.product}</h4>
+            <h4 className="font-display text-lg text-primary font-semibold">
+              {item.product}
+            </h4>
             <div className="flex gap-2 mt-3 flex-wrap">
               {item.techStack?.map((tech) => (
                 <span

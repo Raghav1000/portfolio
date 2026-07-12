@@ -31,6 +31,20 @@ const config: Config = {
       maxWidth: {
         content: "1200px",
       },
+      fontFamily: {
+        sans: [
+          "var(--font-inter)",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        display: [
+          "var(--font-grotesk)",
+          "var(--font-inter)",
+          "ui-sans-serif",
+          "sans-serif",
+        ],
+      },
     },
   },
   plugins: [],

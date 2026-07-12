@@ -13,7 +13,7 @@ const ProjectsList = () => {
       <span className="text-primary text-xs font-medium uppercase tracking-[0.2em]">
         Projects
       </span>
-      <h1 className="text-3xl sm:text-4xl font-semibold">
+      <h1 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
         Personal projects, coming soon
       </h1>
       <p className="text-foreground-muted max-w-md">

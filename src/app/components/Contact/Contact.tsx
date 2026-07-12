@@ -6,6 +6,7 @@ import Button from "../UI/Button/Button";
 import { BiMailSend } from "react-icons/bi";
 import ContactForm from "../AboutMe/ContactForm";
 import SectionHeading from "../UI/SectionHeading/SectionHeading";
+import Reveal from "../UI/Reveal/Reveal";
 import {
   EMAIL,
   GITHUB_URL,
@@ -16,8 +17,10 @@ import {
 const Contact = () => {
   return (
     <section id="contact" className="my-20 md:my-28">
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] shadow-md p-6 md:p-10">
-        <SectionHeading eyebrow="Contact">Get in touch</SectionHeading>
+      <Reveal className="rounded-2xl border border-white/10 bg-white/[0.02] shadow-md p-6 md:p-10">
+        <SectionHeading eyebrow="Contact" index="05">
+          Get in touch
+        </SectionHeading>
 
         <div className="grid gap-10 md:grid-cols-2">
           <div className="flex flex-col justify-between gap-8 min-w-0">
@@ -71,7 +74,7 @@ const Contact = () => {
           </div>
           <ContactForm />
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

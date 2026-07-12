@@ -3,6 +3,7 @@ import { useState } from "react";
 import { skillsTitle } from "@/app/data/skills";
 import Image from "next/image";
 import SectionHeading from "../UI/SectionHeading/SectionHeading";
+import Reveal from "../UI/Reveal/Reveal";
 
 const Skills = () => {
   const [currentSkill, setCurrentSkill] = useState<string>("aiSkills");
@@ -11,11 +12,13 @@ const Skills = () => {
 
   return (
     <section className="my-20 md:my-28">
-      <SectionHeading eyebrow="Tech Stack">
-        Technologies I&apos;ve worked with
-      </SectionHeading>
+      <Reveal>
+        <SectionHeading eyebrow="Tech Stack" index="02">
+          Technologies I&apos;ve worked with
+        </SectionHeading>
+      </Reveal>
 
-      <div className="flex flex-col gap-8 min-w-0">
+      <Reveal delay={0.05} className="flex flex-col gap-8 min-w-0">
         <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1 min-w-0">
           {skillsTitle?.map((item) => (
             <button
@@ -53,7 +56,7 @@ const Skills = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

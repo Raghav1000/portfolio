@@ -3,17 +3,23 @@ import Button from "../UI/Button/Button";
 import { BiDownload } from "react-icons/bi";
 import { CiViewTimeline } from "react-icons/ci";
 import SectionHeading from "../UI/SectionHeading/SectionHeading";
+import Reveal from "../UI/Reveal/Reveal";
 import { RESUME_PATH } from "@/app/utils/common/constants";
 
 const AboutMe = () => {
   return (
     <section className="my-20 md:my-28">
-      <SectionHeading id="about" eyebrow="Introduction">
-        Discover About Me
-      </SectionHeading>
-      <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:gap-16 items-start">
+      <Reveal>
+        <SectionHeading id="about" eyebrow="Introduction" index="01">
+          Discover About Me
+        </SectionHeading>
+      </Reveal>
+      <Reveal
+        delay={0.05}
+        className="grid gap-10 lg:grid-cols-[1fr_auto] lg:gap-16 items-start"
+      >
         <div>
-          <h3 className="text-xl font-medium mb-4">
+          <h3 className="font-display text-2xl font-semibold mb-4">
             Hello, I&apos;m <span className="text-primary">Raghav Mattad</span>
           </h3>
           <p className="leading-7 tracking-wide text-sm sm:text-base text-foreground-muted mb-5">
@@ -35,14 +41,20 @@ const AboutMe = () => {
           </p>
         </div>
         <div className="flex flex-col items-center gap-6 mx-auto">
-          <div className="relative w-52 sm:w-60 aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
-            <Image
-              src="/images/profile2.jpeg"
-              alt="Raghav Mattad"
-              fill
-              sizes="(max-width: 640px) 208px, 240px"
-              className="object-cover"
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-4 -z-10 rounded-[1.75rem] bg-gradient-to-tr from-primary/25 via-primary/5 to-transparent blur-2xl"
             />
+            <div className="relative w-56 sm:w-64 aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 ring-1 ring-inset ring-white/5">
+              <Image
+                src="/images/profile2.jpeg"
+                alt="Raghav Mattad"
+                fill
+                sizes="(max-width: 640px) 224px, 256px"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <a href={RESUME_PATH} target="_blank">
@@ -61,7 +73,7 @@ const AboutMe = () => {
             </a>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

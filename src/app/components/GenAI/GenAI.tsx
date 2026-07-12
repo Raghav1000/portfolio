@@ -1,24 +1,27 @@
 import SectionHeading from "../UI/SectionHeading/SectionHeading";
+import Reveal from "../UI/Reveal/Reveal";
 import { genAiHighlights } from "@/app/data/genAi";
 
 const GenAI = () => {
   return (
     <section id="genai" className="my-20 md:my-28">
-      <SectionHeading eyebrow="AI-Augmented Engineering">
-        Building with GenAI
-      </SectionHeading>
-
-      <p className="text-sm sm:text-base text-foreground-muted max-w-2xl leading-relaxed mb-8">
-        I ship production features powered by large language models — from
-        generative visual systems to natural-language data tooling — and build
-        internal AI workflows that make engineering teams faster.
-      </p>
+      <Reveal>
+        <SectionHeading eyebrow="AI-Augmented Engineering" index="03">
+          Building with GenAI
+        </SectionHeading>
+        <p className="text-sm sm:text-base text-foreground-muted max-w-2xl leading-relaxed mb-8 -mt-4">
+          I ship production features powered by large language models — from
+          generative visual systems to natural-language data tooling — and build
+          internal AI workflows that make engineering teams faster.
+        </p>
+      </Reveal>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {genAiHighlights.map((item) => (
-          <div
+        {genAiHighlights.map((item, i) => (
+          <Reveal
             key={item.title}
-            className="rounded-xl border border-white/10 bg-white/[0.02] p-5 md:p-6 transition-colors hover:border-primary/30"
+            delay={(i % 2) * 0.08}
+            className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:p-6 transition-colors hover:border-primary/30"
           >
             <div className="flex items-start gap-4">
               <span className="flex items-center justify-center h-11 w-11 shrink-0 rounded-xl bg-primary/10 text-primary">
@@ -43,7 +46,7 @@ const GenAI = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

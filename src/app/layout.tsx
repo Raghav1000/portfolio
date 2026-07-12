@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import AppContainer from "./components/AppContainer/AppContainer";
 import Footer from "./components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-grotesk",
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Raghav Mattad — Full Stack Developer",
@@ -20,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${grotesk.variable} font-sans`}>
           <AppContainer>
             <Navbar />
             <main className="w-full min-w-0 max-w-content mx-auto px-5 lg:px-12">
